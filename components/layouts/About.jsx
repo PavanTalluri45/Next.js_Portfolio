@@ -1,15 +1,29 @@
 "use client";
+
+// React imports
 import { useState } from "react";
+
+// Next.js imports
 import Image from "next/image";
+
+// Third-party libraries
 import { motion, AnimatePresence } from "motion/react";
+
+// Local components
 import { Lens } from "@/components/ui/lens";
 import { IconCloud } from "@/components/ui/icon-cloud";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight, ChevronLeft } from "lucide-react";
 import { AuroraText } from "@/components/ui/aurora-text";
 
-// Technology icons for IconCloud
+// Icons
+import { ChevronRight, ChevronLeft } from "lucide-react";
+
+// ==================== CONSTANTS ====================
+
+/**
+ * Technology icons for 3D cloud visualization
+ */
 const TECHNOLOGY_ICONS = [
     // Programming & Query Languages
     "python",
@@ -50,7 +64,9 @@ const TECHNOLOGY_ICONS = [
     "github",
 ];
 
-// Skills organized by category
+/**
+ * Technical skills organized by category
+ */
 const SKILLS = [
     // Programming & Query Languages
     { name: "Python", category: "Language" },
@@ -100,20 +116,26 @@ const SKILLS = [
     { name: "GitHub", category: "Tools" },
 ];
 
+// ==================== COMPONENT ====================
+
+/**
+ * About Section - Two-step interactive section with profile and skills
+ * Step 1: About me content with profile image
+ * Step 2: Technical skills with interactive badge cloud
+ */
 export default function About() {
     const [currentStep, setCurrentStep] = useState(1);
 
-    // Generate image URLs from slugs for IconCloud
+    // Generate icon URLs for IconCloud component
     const iconImages = TECHNOLOGY_ICONS.map(
         (slug) => `https://cdn.simpleicons.org/${slug}`
     );
 
-    // Handle image loading error
+    /**
+     * Handle profile image loading errors gracefully
+     */
     const handleImageError = (e) => {
-        console.error("Profile image failed to load:", e);
-        // Remove the onerror to prevent infinite loop
-        e.target.onerror = null;
-        // Set a fallback image
+        e.target.onerror = null; // Prevent infinite loop
         e.target.src = "https://via.placeholder.com/400x500/3B82F6/FFFFFF?text=Profile+Image";
     };
 

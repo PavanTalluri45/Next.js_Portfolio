@@ -1,11 +1,23 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef } from "react";
+// React imports
+import React, { useState, useEffect, useCallback } from "react";
+
+// Next.js imports
 import Link from "next/link";
+
+// Third-party libraries
 import { motion, AnimatePresence } from "framer-motion";
+
+// Local components
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
-import { cn } from "@/lib/utils";
 import { AuroraText } from "@/components/ui/aurora-text";
+import { Dock, DockIcon } from "@/components/ui/dock";
+
+// Utilities
+import { cn } from "@/lib/utils";
+
+// Icons
 import {
     Home,
     User,
@@ -13,13 +25,15 @@ import {
     FolderOpen,
     GraduationCap,
     Award,
-    Mail,
     X,
     MoreVertical,
 } from "lucide-react";
-import { Dock, DockIcon } from "@/components/ui/dock";
 
-// Navigation items 
+// ==================== CONSTANTS ====================
+
+/**
+ * Navigation menu items with icons for both desktop and mobile navigation
+ */
 const NAV_ITEMS = [
     { name: "Home", href: "#home", icon: Home },
     { name: "About", href: "#about", icon: User },
@@ -29,8 +43,14 @@ const NAV_ITEMS = [
     { name: "Certifications", href: "#certifications", icon: Award },
 ];
 
+/**
+ * Header Component - Adaptive navigation with desktop and mobile layouts
+ * - Desktop: Animated header that transforms on scroll
+ * - Mobile: Bottom dock navigation with responsive item visibility
+ */
 export default function Header() {
-    // State
+    // ==================== STATE MANAGEMENT ====================
+
     const [activeSection, setActiveSection] = useState("home");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -39,15 +59,13 @@ export default function Header() {
     const [visibleNavItems, setVisibleNavItems] = useState([]);
     const [hiddenNavItems, setHiddenNavItems] = useState([]);
 
-    // Refs
-    const scrollTimeoutRef = useRef(null);
-    const lastScrollYRef = useRef(0);
-
     // ==================== HELPER FUNCTIONS ====================
 
+    /**
+     * Updates the active section based on scroll position
+     * Uses an expanded detection range for better UX
+     */
     const updateActiveSection = useCallback(() => {
-        // If not on home page (url check could be added here if using real routing), 
-        // but for single page scroll:
         const sections = NAV_ITEMS.map((item) => item.href.substring(1));
 
         const currentSection = sections.find((section) => {
@@ -55,7 +73,7 @@ export default function Header() {
             if (!element) return false;
 
             const rect = element.getBoundingClientRect();
-            // Expanded detection range
+            // Active when section is within 300px of top
             return rect.top <= 300 && rect.bottom >= 300;
         });
 
@@ -64,6 +82,9 @@ export default function Header() {
         }
     }, []);
 
+    /**
+     * Handles navigation link clicks with smooth scroll
+     */
     const handleLinkClick = (href) => {
         setIsMobileMenuOpen(false);
         const element = document.querySelector(href);
@@ -72,14 +93,23 @@ export default function Header() {
         }
     };
 
+    /**
+     * Handles logo click to return to home
+     */
     const handleLogoClick = () => {
         window.location.href = "/";
     };
 
+    /**
+     * Closes the mobile menu modal
+     */
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);
     };
 
+    /**
+     * Handles smooth scroll from link clicks
+     */
     const handleSmoothScroll = (e, href) => {
         e.preventDefault();
         handleLinkClick(href);
@@ -278,83 +308,54 @@ export default function Header() {
 
     const renderMobileDock = () => {
         if (windowWidth >= 768) return null;
-        if (isFooterVisible) return null; // Hide when footer is visible
+        if (isFooterVisible) return null;
 
         return (
-            <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden pb-safe">
-                {/* Responsive Dock Container */}
-                <div className="mx-auto mb-4 w-max max-w-full px-2">
-                    <Dock
-                        className="bg-background/95 backdrop-blur-xl border border-border/50 rounded-2xl shadow-2xl px-3 py-3"
-                        iconSize={windowWidth < 375 ? 36 : 42}
-                        iconMagnification={windowWidth < 375 ? 50 : 60}
-                        direction="middle"
-                    >
+            <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden pb-4">
+                <div className="flex justify-center px-2">
+                    <div className="flex items-center gap-2 bg-background/95 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl px-4 py-3">
                         {/* Visible navigation icons */}
                         {visibleNavItems.map((item) => {
                             const isActive = activeSection === item.href.substring(1);
                             const Icon = item.icon;
 
                             return (
-                                <DockIcon
+                                <button
                                     key={item.name}
                                     onClick={() => handleLinkClick(item.href)}
                                     className={cn(
-                                        "transition-all duration-200",
+                                        "relative flex items-center justify-center p-3 rounded-full transition-colors duration-200",
                                         isActive
                                             ? "bg-primary/20 text-primary"
                                             : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
                                     )}
                                 >
-                                    <div className="relative">
-                                        <Icon className="w-5 h-5" />
-                                        {isActive && (
-                                            <motion.div
-                                                className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full"
-                                                initial={{ scale: 0 }}
-                                                animate={{ scale: 1 }}
-                                                transition={{ type: "spring" }}
-                                            />
-                                        )}
-                                    </div>
-                                    {/* Tooltip */}
-                                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-foreground text-background text-xs font-medium rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                                        {item.name}
-                                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-foreground rotate-45 -mt-1" />
-                                    </div>
-                                </DockIcon>
+                                    <Icon className="w-5 h-5" />
+                                    {isActive && (
+                                        <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full" />
+                                    )}
+                                </button>
                             );
                         })}
 
                         {/* More button */}
                         {visibleNavItems.length < NAV_ITEMS.length && (
-                            <DockIcon
+                            <button
                                 onClick={() => setIsMobileMenuOpen(true)}
                                 className={cn(
-                                    "transition-all duration-200",
+                                    "relative flex items-center justify-center p-3 rounded-full transition-colors duration-200",
                                     isActiveSectionInHidden || isMobileMenuOpen
                                         ? "bg-primary/20 text-primary"
                                         : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
                                 )}
                             >
-                                <div className="relative">
-                                    <MoreVertical className="w-5 h-5" />
-                                    {isActiveSectionInHidden && (
-                                        <motion.div
-                                            className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full"
-                                            initial={{ scale: 0 }}
-                                            animate={{ scale: 1 }}
-                                            transition={{ type: "spring" }}
-                                        />
-                                    )}
-                                </div>
-                                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-foreground text-background text-xs font-medium rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                                    More
-                                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-foreground rotate-45 -mt-1" />
-                                </div>
-                            </DockIcon>
+                                <MoreVertical className="w-5 h-5" />
+                                {isActiveSectionInHidden && (
+                                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full" />
+                                )}
+                            </button>
                         )}
-                    </Dock>
+                    </div>
                 </div>
             </div>
         );

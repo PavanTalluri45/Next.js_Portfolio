@@ -1,9 +1,18 @@
 "use client";
-import ProjectCard from "@/components/cards/Project/ProjectCard";
+
+// React imports
 import { motion } from "motion/react";
+
+// Local components
+import ProjectCard from "@/components/cards/Project/ProjectCard";
 import { AuroraText } from "@/components/ui/aurora-text";
 
-const projects = [
+// ==================== CONSTANTS ====================
+
+/**
+ * Featured projects showcasing full-stack development and data analytics work
+ */
+const PROJECTS = [
     {
         title: "Complete Authentication System",
         description: "A production-ready authentication platform implementing secure user registration, login, OTP-based email verification, password recovery, JWT and refresh token workflows, and Redis-powered rate limiting, built using a microservice-oriented backend architecture with Next.js and Node.js for scalability and security.",
@@ -54,6 +63,8 @@ const projects = [
     }
 ];
 
+// ==================== ANIMATION VARIANTS ====================
+
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -82,9 +93,15 @@ const cardVariants = {
     }
 };
 
+// ==================== COMPONENT ====================
+
+/**
+ * Projects Section - Showcases featured development and analytics projects
+ */
 export default function Projects() {
     return (
         <section id="projects" className="container mx-auto py-20 px-4 md:px-6">
+            {/* Section Header */}
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -97,6 +114,7 @@ export default function Projects() {
                 </h2>
             </motion.div>
 
+            {/* Projects Grid */}
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -104,7 +122,7 @@ export default function Projects() {
                 viewport={{ once: true, margin: "-100px" }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-                {projects.map((project, index) => (
+                {PROJECTS.map((project, index) => (
                     <motion.div key={index} variants={cardVariants}>
                         <ProjectCard
                             {...project}

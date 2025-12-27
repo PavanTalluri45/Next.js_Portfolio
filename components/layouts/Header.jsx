@@ -308,7 +308,7 @@ export default function Header() {
 
     const renderMobileDock = () => {
         if (windowWidth >= 768) return null;
-        if (isFooterVisible) return null;
+
 
         return (
             <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden pb-4">

@@ -26,7 +26,7 @@ const projects = [
         title: "Personal Portfolio",
         description: "A high-performance, fully responsive developer portfolio built with modern UI and animation frameworks, designed to showcase full-stack and data engineering projects with smooth transitions, interactive components, and optimized layout for both desktop and mobile users.",
         technologies: ["Next.js", "Tailwind CSS", "Docker", "Magic UI", "Framer Motion", "Shadcn UI"],
-        repoLink: "https://github.com/PavanTalluri45",
+        repoLink: "https://github.com/PavanTalluri45/Next.js_Portfolio",
     },
     {
         title: "Credit Card Financial Analysis Dashboard",

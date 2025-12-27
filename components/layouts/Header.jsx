@@ -38,8 +38,6 @@ export default function Header() {
     const [windowWidth, setWindowWidth] = useState(0);
     const [visibleNavItems, setVisibleNavItems] = useState([]);
     const [hiddenNavItems, setHiddenNavItems] = useState([]);
-    const [lastScrollY, setLastScrollY] = useState(0);
-    const [showBottomNav, setShowBottomNav] = useState(true);
 
     // Refs
     const scrollTimeoutRef = useRef(null);
@@ -152,11 +150,6 @@ export default function Header() {
             const currentScrollY = window.scrollY;
             // Scrolled state triggers earlier
             setIsScrolled(currentScrollY > 50);
-
-            // Hide bottom nav when scrolling down, show when scrolling up
-            setShowBottomNav(!(currentScrollY > lastScrollY && currentScrollY > 100));
-
-            setLastScrollY(currentScrollY);
             updateActiveSection();
         };
 
@@ -164,7 +157,7 @@ export default function Header() {
         handleScroll();
 
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY, updateActiveSection]);
+    }, [updateActiveSection]);
 
     // ==================== DESKTOP NAVIGATION ====================
 
@@ -285,94 +278,85 @@ export default function Header() {
 
     const renderMobileDock = () => {
         if (windowWidth >= 768) return null;
+        if (isFooterVisible) return null; // Hide when footer is visible
 
         return (
-            <AnimatePresence>
-                {showBottomNav && (
-                    <motion.div
-                        className="fixed bottom-0 left-0 right-0 z-50 md:hidden"
-                        initial={{ y: 100, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: 100, opacity: 0 }}
-                        transition={{ type: "spring", damping: 20, stiffness: 300 }}
+            <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden pb-safe">
+                {/* Responsive Dock Container */}
+                <div className="mx-auto mb-4 w-max max-w-full px-2">
+                    <Dock
+                        className="bg-background/95 backdrop-blur-xl border border-border/50 rounded-2xl shadow-2xl px-3 py-3"
+                        iconSize={windowWidth < 375 ? 36 : 42}
+                        iconMagnification={windowWidth < 375 ? 50 : 60}
+                        direction="middle"
                     >
-                        {/* Responsive Dock Container */}
-                        <div className="mx-auto mb-4 w-max max-w-full px-2">
-                            <Dock
-                                className="bg-background/95 backdrop-blur-xl border border-border/50 rounded-2xl shadow-2xl px-3 py-3"
-                                iconSize={windowWidth < 375 ? 36 : 42}
-                                iconMagnification={windowWidth < 375 ? 50 : 60}
-                                direction="middle"
-                            >
-                                {/* Visible navigation icons */}
-                                {visibleNavItems.map((item) => {
-                                    const isActive = activeSection === item.href.substring(1);
-                                    const Icon = item.icon;
+                        {/* Visible navigation icons */}
+                        {visibleNavItems.map((item) => {
+                            const isActive = activeSection === item.href.substring(1);
+                            const Icon = item.icon;
 
-                                    return (
-                                        <DockIcon
-                                            key={item.name}
-                                            onClick={() => handleLinkClick(item.href)}
-                                            className={cn(
-                                                "transition-all duration-200",
-                                                isActive
-                                                    ? "bg-primary/20 text-primary"
-                                                    : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
-                                            )}
-                                        >
-                                            <div className="relative">
-                                                <Icon className="w-5 h-5" />
-                                                {isActive && (
-                                                    <motion.div
-                                                        className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full"
-                                                        initial={{ scale: 0 }}
-                                                        animate={{ scale: 1 }}
-                                                        transition={{ type: "spring" }}
-                                                    />
-                                                )}
-                                            </div>
-                                            {/* Tooltip */}
-                                            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-foreground text-background text-xs font-medium rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                                                {item.name}
-                                                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-foreground rotate-45 -mt-1" />
-                                            </div>
-                                        </DockIcon>
-                                    );
-                                })}
-
-                                {/* More button */}
-                                {visibleNavItems.length < NAV_ITEMS.length && (
-                                    <DockIcon
-                                        onClick={() => setIsMobileMenuOpen(true)}
-                                        className={cn(
-                                            "transition-all duration-200",
-                                            isActiveSectionInHidden || isMobileMenuOpen
-                                                ? "bg-primary/20 text-primary"
-                                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
+                            return (
+                                <DockIcon
+                                    key={item.name}
+                                    onClick={() => handleLinkClick(item.href)}
+                                    className={cn(
+                                        "transition-all duration-200",
+                                        isActive
+                                            ? "bg-primary/20 text-primary"
+                                            : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
+                                    )}
+                                >
+                                    <div className="relative">
+                                        <Icon className="w-5 h-5" />
+                                        {isActive && (
+                                            <motion.div
+                                                className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full"
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                transition={{ type: "spring" }}
+                                            />
                                         )}
-                                    >
-                                        <div className="relative">
-                                            <MoreVertical className="w-5 h-5" />
-                                            {isActiveSectionInHidden && (
-                                                <motion.div
-                                                    className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full"
-                                                    initial={{ scale: 0 }}
-                                                    animate={{ scale: 1 }}
-                                                    transition={{ type: "spring" }}
-                                                />
-                                            )}
-                                        </div>
-                                        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-foreground text-background text-xs font-medium rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                                            More
-                                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-foreground rotate-45 -mt-1" />
-                                        </div>
-                                    </DockIcon>
+                                    </div>
+                                    {/* Tooltip */}
+                                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-foreground text-background text-xs font-medium rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                        {item.name}
+                                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-foreground rotate-45 -mt-1" />
+                                    </div>
+                                </DockIcon>
+                            );
+                        })}
+
+                        {/* More button */}
+                        {visibleNavItems.length < NAV_ITEMS.length && (
+                            <DockIcon
+                                onClick={() => setIsMobileMenuOpen(true)}
+                                className={cn(
+                                    "transition-all duration-200",
+                                    isActiveSectionInHidden || isMobileMenuOpen
+                                        ? "bg-primary/20 text-primary"
+                                        : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
                                 )}
-                            </Dock>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                            >
+                                <div className="relative">
+                                    <MoreVertical className="w-5 h-5" />
+                                    {isActiveSectionInHidden && (
+                                        <motion.div
+                                            className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full"
+                                            initial={{ scale: 0 }}
+                                            animate={{ scale: 1 }}
+                                            transition={{ type: "spring" }}
+                                        />
+                                    )}
+                                </div>
+                                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-foreground text-background text-xs font-medium rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                    More
+                                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-foreground rotate-45 -mt-1" />
+                                </div>
+                            </DockIcon>
+                        )}
+                    </Dock>
+                </div>
+            </div>
         );
     };
 

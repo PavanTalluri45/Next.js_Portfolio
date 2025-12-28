@@ -11,6 +11,9 @@ import { Button } from "@/components/ui/button";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Award } from "lucide-react";
 
+/**
+ * CertificationCard Component - Displays official certifications with BorderBeam effect
+ */
 export default function CertificationCard({ name, issuer, date, description, skills, certificateLink, delay }) {
     return (
         <div className="relative group rounded-xl h-full">

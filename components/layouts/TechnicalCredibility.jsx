@@ -1,9 +1,12 @@
 "use client";
-import CertificationCard from "@/components/cards/Certification/CertificationCard";
+
 import { motion } from "motion/react";
 import { AuroraText } from "@/components/ui/aurora-text";
+import CertificationCard from "@/components/cards/Certification/CertificationCard";
 
-const certifications = [
+// ==================== DATA ====================
+
+const CERTIFICATIONS = [
     {
         "name": "Complete Python Course",
         "issuer": "Aajhub & Sapienz Recruit",
@@ -16,10 +19,8 @@ const certifications = [
             "Problem Solving",
             "Fundamentals of Software Development"
         ],
-
         "certificateLink": "https://drive.google.com/file/d/1-j_Bh6lN2A1TCjnemZRTdt8JfUPdHG4t/view?usp=drive_link"
     },
-
     {
         "name": "SQL – Basic to Advanced",
         "issuer": "Aajhub & Sapienz Recruit",
@@ -33,10 +34,8 @@ const certifications = [
             "Data Aggregation",
             "Query Optimization"
         ],
-
         "certificateLink": "https://drive.google.com/file/d/1-y2h6bL1sfbIp_AQOhS--hw0mgvKNbJa/view?usp=drive_link"
     },
-
     {
         "name": "Full Stack Web Development Course",
         "issuer": "Aajhub & Sapienz Recruit",
@@ -52,10 +51,8 @@ const certifications = [
             "Database Integration",
             "Full Stack Web Development"
         ],
-
         "certificateLink": "https://drive.google.com/file/d/15vGHVHvN1DPLe-wVC8UgxsDOq5tpAcAs/view?usp=drive_link"
     },
-
     {
         "name": "Machine Learning with Python",
         "issuer": "Cognitive Class (IBM Developer Skills Network)",
@@ -69,10 +66,8 @@ const certifications = [
             "Model Evaluation",
             "Data Analysis"
         ],
-
         "certificateLink": "https://courses.cognitiveclass.ai/certificates/1d3a13a0f19043c897059c5dcb7af664"
     },
-
     {
         "name": "Complete DSA Course",
         "issuer": "Aajhub & Sapienz Recruit",
@@ -85,11 +80,8 @@ const certifications = [
             "Time and Space Complexity",
             "Coding Interview Preparation"
         ],
-
         "certificateLink": "https://drive.google.com/file/d/1USwFDwEbmUdP1G5YnveiV7K6Z36hZocH/view?usp=drive_link"
     }
-
-
 ];
 
 const containerVariants = {
@@ -106,7 +98,7 @@ const containerVariants = {
 const cardVariants = {
     hidden: {
         opacity: 0,
-        y: 30,
+        y: 50,
         scale: 0.95
     },
     visible: {
@@ -120,37 +112,43 @@ const cardVariants = {
     }
 };
 
-export default function Certifications() {
+export default function TechnicalCredibility() {
     return (
-        <section id="certifications" className="container mx-auto py-20 px-4 md:px-6">
+        <section id="credibility" className="container mx-auto py-24 px-4 md:px-6">
             <motion.div
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 0, y: -50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-center mb-12"
+                className="text-center mb-20"
             >
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-                    Licenses & <AuroraText>Certifications</AuroraText>
+                <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
+                    Technical <AuroraText>Credibility</AuroraText>
                 </h2>
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                    Verified competence across critical technology domains and industry certifications.
+                </p>
             </motion.div>
 
-            <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
-                {certifications.map((cert, index) => (
-                    <motion.div key={index} variants={cardVariants}>
-                        <CertificationCard
-                            {...cert}
-                            delay={index * 1.5}
-                        />
-                    </motion.div>
-                ))}
-            </motion.div>
+            <div className="space-y-24">
+                {/* Certifications Grid */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    {CERTIFICATIONS.map((cert, index) => (
+                        <motion.div key={index} variants={cardVariants}>
+                            <CertificationCard
+                                {...cert}
+                                delay={index * 0.1}
+                            />
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </div>
         </section>
     );
 }

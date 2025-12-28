@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 
 // Third-party libraries
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 // Local components
 import { LightRays } from "@/components/ui/light-rays";
@@ -125,7 +125,7 @@ export default function Hero() {
                 >
                     {/* View Projects Button */}
                     <RainbowButton
-                        onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+                        onClick={() => document.getElementById("engineering")?.scrollIntoView({ behavior: "smooth" })}
                         className="h-12 sm:h-14 w-full sm:w-auto min-w-[280px] rounded-lg text-base sm:text-lg px-8"
                     >
                         <span className="flex items-center justify-center sm:justify-start gap-2">

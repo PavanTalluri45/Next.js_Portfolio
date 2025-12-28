@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 
 export default function WelcomeScreen({ onComplete }) {

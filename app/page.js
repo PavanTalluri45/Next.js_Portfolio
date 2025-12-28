@@ -6,10 +6,9 @@ import { useState, useEffect } from "react";
 // Local components - Layout sections
 import Hero from "@/components/layouts/Hero";
 import About from "@/components/layouts/About";
-import Experience from "@/components/layouts/Experience";
-import Projects from "@/components/layouts/Projects";
-import Education from "@/components/layouts/Education";
-import Certifications from "@/components/layouts/Certifications";
+import EngineeringWork from "@/components/layouts/EngineeringWork";
+import ProfessionalJourney from "@/components/layouts/ProfessionalJourney";
+import TechnicalCredibility from "@/components/layouts/TechnicalCredibility";
 import Footer from "@/components/layouts/Footer";
 import WelcomeScreen from "@/components/Welcome Animation/welcome-screen";
 
@@ -50,10 +49,9 @@ export default function Home() {
                 <>
                     <Hero />
                     <About />
-                    <Projects />
-                    <Experience />
-                    <Education />
-                    <Certifications />
+                    <EngineeringWork />
+                    <ProfessionalJourney />
+                    <TechnicalCredibility />
                     <Footer />
                 </>
             )}

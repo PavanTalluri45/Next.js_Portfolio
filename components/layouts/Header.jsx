@@ -7,7 +7,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 
 // Third-party libraries
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 // Local components
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
@@ -16,6 +16,15 @@ import { Dock, DockIcon } from "@/components/ui/dock";
 
 // Utilities
 import { cn } from "@/lib/utils";
+
+/**
+ * Header Component - Adaptive navigation with desktop and mobile layouts
+ * 
+ * Features:
+ * - Desktop: Animated floating header that transforms on scroll
+ * - Mobile: Dynamic bottom dock with responsive menu modal
+ * - Intersection observers for active section highlighting and footer avoidance
+ */
 
 // Icons
 import {
@@ -37,10 +46,9 @@ import {
 const NAV_ITEMS = [
     { name: "Home", href: "#home", icon: Home },
     { name: "About", href: "#about", icon: User },
-    { name: "Projects", href: "#projects", icon: FolderOpen },
-    { name: "Experience", href: "#experience", icon: Briefcase },
-    { name: "Education", href: "#education", icon: GraduationCap },
-    { name: "Certifications", href: "#certifications", icon: Award },
+    { name: "Engineering Work", href: "#engineering", icon: FolderOpen },
+    { name: "Professional Journey", href: "#journey", icon: Briefcase },
+    { name: "Technical Credibility", href: "#credibility", icon: Award },
 ];
 
 /**
@@ -222,7 +230,7 @@ export default function Header() {
                 className={cn(
                     "fixed z-50 flex items-center justify-center transition-colors duration-500",
                     isScrolled
-                        ? "left-1/2 -translate-x-1/2 bg-background/80 backdrop-blur-md border border-border/50 shadow-lg px-6 py-3"
+                        ? "left-1/2 -translate-x-1/2 bg-background/80 backdrop-blur-md border border-border/50 shadow-lg px-12 py-3"
                         : "left-0 right-0 px-12 py-8 bg-transparent border-none"
                 )}
                 initial="initial"

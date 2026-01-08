@@ -18,7 +18,7 @@ import { ArrowRight } from "lucide-react";
 
 // ==================== CONSTANTS ====================
 
-const RESUME_PATH = "https://drive.google.com/drive/folders/116ZXqTCaBt4zgQqPPxT2KJWPxcWJ8Wzz?usp=drive_link";
+const RESUME_PATH = "https://drive.google.com/drive/folders/1aP-WfA0EbDtOKvGqPvfd7P_DBN3Cuovm?usp=drive_link";
 
 const TYPING_ROLES = [
     "Full Stack Developer",

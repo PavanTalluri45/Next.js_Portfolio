@@ -4,6 +4,12 @@ import { AuroraText } from "@/components/ui/aurora-text";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const quickLinks = [
     { name: "Home", href: "#home" },
@@ -29,7 +35,7 @@ export default function Footer() {
         }
     };
 
-    const resumePath = "https://drive.google.com/drive/folders/1aP-WfA0EbDtOKvGqPvfd7P_DBN3Cuovm?usp=drive_link";
+    const resumePath = "https://drive.google.com/file/d/1rbiq3yW7iIBONxF2SEauu6iTVjjZU2bt/view?usp=drive_link";
 
     const handleDownloadResume = () => {
         window.open(resumePath, '_blank', 'noopener,noreferrer');
@@ -59,22 +65,30 @@ export default function Footer() {
                         </div>
 
                         <div className="flex items-center gap-4">
-                            {socialLinks.map((social) => (
-                                <a
-                                    key={social.label}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={social.label}
-                                    className="block"
-                                >
-                                    {/* Icon Container - BorderBeam with faster animation */}
-                                    <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-background/50 border border-border/10 group cursor-pointer hover:bg-primary/10 transition-colors duration-300">
-                                        <BorderBeam size={40} duration={3} delay={0} borderWidth={1} />
-                                        <social.icon className="relative z-10 w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
-                                    </div>
-                                </a>
-                            ))}
+                            <TooltipProvider>
+                                {socialLinks.map((social) => (
+                                    <Tooltip key={social.label}>
+                                        <TooltipTrigger asChild>
+                                            <a
+                                                href={social.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label={social.label}
+                                                className="block"
+                                            >
+                                                {/* Icon Container - BorderBeam with faster animation */}
+                                                <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-background/50 border border-border/10 group cursor-pointer hover:bg-primary/10 transition-colors duration-300">
+                                                    <BorderBeam size={40} duration={3} delay={0} borderWidth={1} />
+                                                    <social.icon className="relative z-10 w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+                                                </div>
+                                            </a>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                            {social.label}
+                                        </TooltipContent>
+                                    </Tooltip>
+                                ))}
+                            </TooltipProvider>
                         </div>
                     </motion.div>
 

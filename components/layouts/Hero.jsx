@@ -18,11 +18,11 @@ import { ArrowRight } from "lucide-react";
 
 // ==================== CONSTANTS ====================
 
-const RESUME_PATH = "https://drive.google.com/drive/folders/1aP-WfA0EbDtOKvGqPvfd7P_DBN3Cuovm?usp=drive_link";
+const RESUME_PATH = "https://drive.google.com/file/d/1rbiq3yW7iIBONxF2SEauu6iTVjjZU2bt/view?usp=drive_link";
 
 const TYPING_ROLES = [
     "Full Stack Developer",
-    "Data Analyst",
+    "Generative AI Engineer",
 ];
 
 // ==================== COMPONENT ====================
@@ -72,14 +72,14 @@ export default function Hero() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 mx-auto w-full max-w-5xl text-center px-4">
+            <div className="relative z-10 mx-auto w-full max-w-4xl text-center px-3">
                 {/* Name */}
                 <motion.h1
                     custom={1}
                     initial="hidden"
                     animate={isLoaded ? "visible" : "hidden"}
                     variants={fadeUpVariants}
-                    className="mb-2 mt-10 text-3xl font-bold tracking-tight xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                    className="mb-2 mt-10 text-2xl font-bold tracking-tight xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
                 >
                     <AuroraText>Pavan Kumar Talluri</AuroraText>
                 </motion.h1>
@@ -90,7 +90,7 @@ export default function Hero() {
                     initial="hidden"
                     animate={isLoaded ? "visible" : "hidden"}
                     variants={fadeUpVariants}
-                    className="mb-4 h-auto min-h-12 sm:min-h-14 text-xl font-medium text-muted-foreground sm:text-2xl md:text-3xl lg:text-4xl"
+                    className="mb-4 h-auto min-h-12 sm:min-h-14 text-lg font-medium text-muted-foreground sm:text-xl md:text-2xl lg:text-3xl"
                 >
                     <span className="block sm:inline">I am a </span>
                     <TypingAnimation
@@ -108,7 +108,7 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={isLoaded ? { opacity: 1 } : {}}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="mx-auto w-full max-w-4xl text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl px-2 sm:px-4"
+                    className="mx-auto w-full max-w-4xl text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg px-2 sm:px-4"
                 >
                     <p>
                         A full-stack engineer with a strong analytical foundation who builds end-to-end digital systems and transforms data into strategic insight. I create reliable, scalable applications while simultaneously analyzing complex information to identify patterns, optimize performance, and guide informed business decisions, ensuring that every product is both technically sound and commercially intelligent.
@@ -126,7 +126,7 @@ export default function Hero() {
                     {/* View Projects Button */}
                     <RainbowButton
                         onClick={() => document.getElementById("engineering")?.scrollIntoView({ behavior: "smooth" })}
-                        className="h-12 sm:h-14 w-full sm:w-auto min-w-[280px] rounded-lg text-base sm:text-lg px-8"
+                        className="h-10 sm:h-12 w-full sm:w-auto min-w-[240px] rounded-lg text-sm sm:text-base px-6"
                     >
                         <span className="flex items-center justify-center sm:justify-start gap-2">
                             View My Work
@@ -143,7 +143,7 @@ export default function Hero() {
                             className="inline-block w-full"
                         >
                             <InteractiveHoverButton
-                                className="h-14 w-full min-w-[280px] rounded-lg text-lg px-8"
+                                className="h-12 w-full min-w-[240px] rounded-lg text-base px-6"
                             >
                                 Download Resume
                             </InteractiveHoverButton>
@@ -159,7 +159,7 @@ export default function Hero() {
                             className="inline-block w-full"
                         >
                             <RainbowButton
-                                className="h-12 w-full rounded-lg text-base px-8 bg-white/5"
+                                className="h-10 w-full rounded-lg text-sm px-6 bg-white/5"
                             >
                                 <span className="flex items-center justify-center gap-2">
                                     Download Resume

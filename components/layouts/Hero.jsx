@@ -18,11 +18,11 @@ import { ArrowRight } from "lucide-react";
 
 // ==================== CONSTANTS ====================
 
-const RESUME_PATH = "https://drive.google.com/file/d/1rbiq3yW7iIBONxF2SEauu6iTVjjZU2bt/view?usp=drive_link";
+const RESUME_PATH = "https://drive.google.com/drive/folders/1riQlmTA3haWcY2NX5-0UWd8i8XgvVeDJ?usp=drive_link";
 
 const TYPING_ROLES = [
     "Full Stack Developer",
-    "Generative AI Engineer",
+    "Data Analyst",
 ];
 
 // ==================== COMPONENT ====================

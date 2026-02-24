@@ -14,9 +14,9 @@ import {
 const quickLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Engineering Work", href: "#engineering" },
-    { name: "Professional Journey", href: "#journey" },
-    { name: "Technical Credibility", href: "#credibility" }
+    { name: "Projects", href: "#engineering" },
+    { name: "Experience", href: "#journey" },
+    { name: "Skills", href: "#credibility" }
 ];
 
 const socialLinks = [
@@ -35,7 +35,7 @@ export default function Footer() {
         }
     };
 
-    const resumePath = "https://drive.google.com/file/d/1rbiq3yW7iIBONxF2SEauu6iTVjjZU2bt/view?usp=drive_link";
+    const resumePath = "https://drive.google.com/drive/folders/1riQlmTA3haWcY2NX5-0UWd8i8XgvVeDJ?usp=drive_link";
 
     const handleDownloadResume = () => {
         window.open(resumePath, '_blank', 'noopener,noreferrer');
@@ -83,7 +83,7 @@ export default function Footer() {
                                                 </div>
                                             </a>
                                         </TooltipTrigger>
-                                        <TooltipContent>
+                                        <TooltipContent side="bottom">
                                             {social.label}
                                         </TooltipContent>
                                     </Tooltip>

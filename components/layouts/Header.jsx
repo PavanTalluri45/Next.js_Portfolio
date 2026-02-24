@@ -46,9 +46,9 @@ import {
 const NAV_ITEMS = [
     { name: "Home", href: "#home", icon: Home },
     { name: "About", href: "#about", icon: User },
-    { name: "Engineering Work", href: "#engineering", icon: FolderOpen },
-    { name: "Professional Journey", href: "#journey", icon: Briefcase },
-    { name: "Technical Credibility", href: "#credibility", icon: Award },
+    { name: "Projects", href: "#engineering", icon: FolderOpen },
+    { name: "Experience", href: "#journey", icon: Briefcase },
+    { name: "Certifications", href: "#credibility", icon: Award },
 ];
 
 /**
@@ -201,8 +201,8 @@ export default function Header() {
 
     const headerVariants = {
         initial: {
-            y: -100,
-            opacity: 0,
+            y: 0,
+            opacity: 1,
             width: "100%",
             borderRadius: "0px",
             top: 0
@@ -215,8 +215,8 @@ export default function Header() {
             top: isScrolled ? "1.5rem" : "0rem",
             transition: {
                 type: "spring",
-                stiffness: 100,
-                damping: 20
+                stiffness: 260,
+                damping: 25
             }
         })
     };

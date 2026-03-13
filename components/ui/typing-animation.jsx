@@ -19,6 +19,7 @@ export function TypingAnimation({
   showCursor = true,
   blinkCursor = true,
   cursorStyle = "line",
+  onComplete,
   ...props
 }) {
   const MotionComponent = motion.create(Component, {
@@ -113,6 +114,12 @@ export function TypingAnimation({
     currentWordIndex === wordsToAnimate.length - 1 &&
     currentCharIndex >= currentWordGraphemes.length &&
     phase !== "deleting"
+
+  useEffect(() => {
+    if (isComplete && onComplete) {
+      onComplete();
+    }
+  }, [isComplete, onComplete]);
 
   const shouldShowCursor =
     showCursor &&

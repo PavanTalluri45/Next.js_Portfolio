@@ -52,35 +52,6 @@ const CERTIFICATIONS = [
             "Full Stack Web Development"
         ],
         "certificateLink": "https://drive.google.com/file/d/15vGHVHvN1DPLe-wVC8UgxsDOq5tpAcAs/view?usp=drive_link"
-    },
-    {
-        "name": "Machine Learning with Python",
-        "issuer": "Cognitive Class (IBM Developer Skills Network)",
-        "date": "November 2024",
-        "description": "Successfully completed an IBM-powered Machine Learning program covering supervised and unsupervised learning, model training, evaluation, and practical implementation using Python.",
-        "skills": [
-            "Machine Learning",
-            "Python",
-            "Supervised Learning",
-            "Unsupervised Learning",
-            "Model Evaluation",
-            "Data Analysis"
-        ],
-        "certificateLink": "https://courses.cognitiveclass.ai/certificates/1d3a13a0f19043c897059c5dcb7af664"
-    },
-    {
-        "name": "Complete DSA Course",
-        "issuer": "Aajhub & Sapienz Recruit",
-        "date": "October 2025",
-        "description": "Successfully completed an intensive Data Structures and Algorithms program covering problem-solving techniques, algorithmic thinking, and core data structures used in software engineering and competitive programming.",
-        "skills": [
-            "Data Structures",
-            "Algorithms",
-            "Problem Solving",
-            "Time and Space Complexity",
-            "Coding Interview Preparation"
-        ],
-        "certificateLink": "https://drive.google.com/file/d/1USwFDwEbmUdP1G5YnveiV7K6Z36hZocH/view?usp=drive_link"
     }
 ];
 

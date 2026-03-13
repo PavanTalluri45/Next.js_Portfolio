@@ -41,23 +41,18 @@ const TECHNOLOGY_ICONS = [
     // Backend & APIs
     "nodedotjs",
     "express",
-    "graphql",
+
 
     // Databases & Data Infrastructure
     "mysql",
-    "postgresql",
+
     "mongodb",
     "redis",
 
     // Data Science & Machine Learning
     "pandas",
     "numpy",
-    "scikitlearn",
     "microsoftpowerbi",
-
-    // Cloud, DevOps & Deployment
-    "amazonwebservices",
-    "docker",
 
     // Version Control & Developer Tools
     "git",
@@ -85,13 +80,10 @@ const SKILLS = [
     { name: "Node.js", category: "Backend" },
     { name: "Express.js", category: "Backend" },
     { name: "REST APIs", category: "Backend" },
-    { name: "GraphQL", category: "Backend" },
-    { name: "Microservices Architecture", category: "Backend" },
     { name: "WebSockets", category: "Backend" },
 
     // Databases & Data Infrastructure
     { name: "MySQL", category: "Database" },
-    { name: "PostgreSQL", category: "Database" },
     { name: "MongoDB", category: "Database" },
     { name: "Redis", category: "Database" },
     { name: "Firebase", category: "Database" },
@@ -101,17 +93,9 @@ const SKILLS = [
     { name: "NumPy", category: "Data Science" },
     { name: "Matplotlib", category: "Data Science" },
     { name: "Seaborn", category: "Data Science" },
-    { name: "Scikit-learn", category: "Data Science" },
-    { name: "Statistical Analysis", category: "Data Science" },
-    { name: "Machine Learning", category: "Data Science" },
     { name: "Power BI", category: "Data Science" },
 
-    // Cloud, DevOps & Deployment
-    { name: "AWS", category: "Cloud" },
-    { name: "Docker", category: "Cloud" },
-    { name: "CI/CD", category: "Cloud" },
-
-    // Engineering & Product Tools
+    // Version Control & Developer Tools
     { name: "Git", category: "Tools" },
     { name: "GitHub", category: "Tools" },
 ];

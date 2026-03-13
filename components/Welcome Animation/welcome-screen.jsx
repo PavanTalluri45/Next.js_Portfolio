@@ -10,18 +10,18 @@ export default function WelcomeScreen({ onComplete }) {
 
     useEffect(() => {
         setIsMounted(true);
+    }, []);
 
-        // Simple text animation timing
-        const timer = setTimeout(() => {
+    const handleTypingComplete = () => {
+        // Wait a moment after typing finishes to let the user read it
+        setTimeout(() => {
             setPhase('complete');
             setTimeout(() => {
                 sessionStorage.setItem("welcomeShown", "true");
                 onComplete();
-            }, 1000);
-        }, 3000);
-
-        return () => clearTimeout(timer);
-    }, [onComplete]);
+            }, 1000); // Time for exit animation
+        }, 800);
+    };
 
     if (!isMounted) return null;
 
@@ -45,6 +45,7 @@ export default function WelcomeScreen({ onComplete }) {
                             className="font-bold text-transparent bg-clip-text bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500"
                             cursorStyle="|"
                             loop={false}
+                            onComplete={handleTypingComplete}
                         />
                     </motion.div>
                 </motion.div>

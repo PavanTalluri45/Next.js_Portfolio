@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll } from "motion/react";
 import { useRef } from "react";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { Briefcase, GraduationCap } from "lucide-react";
@@ -21,7 +21,7 @@ const JOURNEY = [
                 organization: "NullClass Edtech Private Limited",
                 period: "Nov 2024 - Apr 2025",
                 desc: "Built an interactive Power BI business intelligence dashboard to deliver real-time visibility into key performance indicators and emerging trends, supporting data-driven strategic decision-making. Executed large-scale data cleaning and transformation using Power Query, improving overall data quality by 40 percent and establishing reliable automated data pipelines. Designed advanced DAX measures and calculated columns to generate actionable insights from social media engagement data, enabling more precise, performance-driven content and marketing strategies.",
-                tags: ["Power BI", "Power Query", "DAX", "Data Visualization", "Marketing Analytics"]
+                tags: ["Power BI", "Power Query", "DAX", "Data Visualization", "Data Cleaning"]
             },
             {
                 title: "Developer Intern",
@@ -35,7 +35,6 @@ const JOURNEY = [
                     "Web Performance Optimization",
                     "Web Accessibility",
                     "RESTful API Integration",
-                    "Agile Development",
                     "Git Version Control",
                     "Code Reviews",
                     "Cross-Browser Compatibility"
@@ -55,35 +54,18 @@ const JOURNEY = [
                 organization: "Chalapathi Institute of Technology",
                 period: "2020/21 - 2025",
                 desc: "Completed a specialized undergraduate program in Data Science and Computer Science, covering data analytics, machine learning, databases, and full-stack development, graduating with a CGPA of 6.70/10.",
-                tags: [
-                    "Data Science",
-                    "Machine Learning",
-                    "Python",
-                    "SQL",
-                    "Data Analytics",
-                    "Statistics",
-                    "Probability",
-                    "Database Management Systems",
-                    "Data Structures & Algorithms",
-                    "Full-Stack Development",
-                    "Computer Science Fundamentals",
-                    "Software Engineering"
-                ]
-
             },
             {
                 title: "Intermediate (12th Grade)",
                 organization: "Sri Chaitanya Junior College",
                 period: "2018 - 2020",
                 desc: "Focused on Mathematics, Physics, and Chemistry with a strong academic foundation in analytical and problem-solving skills, achieving a CGPA of 8.11/10.",
-                tags: ["Mathematics", "Physics", "Chemistry"]
             },
             {
                 title: "Secondary School (10th Grade)",
                 organization: "Dr. KKR Gowtham School",
                 period: "2018",
                 desc: "Completed secondary education with a CGPA of 9.3/10, demonstrating strong academic performance and discipline.",
-                tags: ["Academics", "Discipline", "Foundation"]
             }
         ]
     }
@@ -175,7 +157,7 @@ export default function ProfessionalJourney() {
                                                     </p>
 
                                                     <div className="flex flex-wrap gap-2">
-                                                        {item.tags.map((tag, t) => (
+                                                        {item.tags?.map((tag, t) => (
                                                             <Badge key={t} variant="secondary" className="px-2 py-0.5 text-[10px] uppercase tracking-wider bg-secondary/30 text-secondary-foreground/70">
                                                                 {tag}
                                                             </Badge>

@@ -20,8 +20,8 @@ const PROJECTS = [
         solution: "Designed a microservice-oriented architecture separating Auth and Email services, ensuring scalability. implemented rigorous security measures like rate limiting via Redis and secure token management.",
         architecture: [
             "Microservices Architecture (Auth Service + Email Service)",
-            "Redis for Rate Limiting & Token Blacklisting",
-            "MySQL with Sequelize ORM for Relational Data",
+            "Redis for Rate Limiting, Session Handling and OTP Storage & Expiration",
+            "MySQL Relational Database",
             "Secure HTTP-only Cookies for Tokens"
         ],
         features: [
@@ -58,7 +58,7 @@ const PROJECTS = [
         image: "/project_images/casestudy2.webp"
     },
     {
-        title: "E-commerce Microservices Platform",
+        title: "E-commerce Platform",
         tagline: "Scalable MERN Stack Architecture",
         description: "A full-stack MERN e-commerce platform featuring responsive product browsing, cart management, and secure checkout, built on a microservice-based backend architecture.",
         problem: "Monolithic e-commerce apps become hard to scale and maintain as features grow.",
@@ -101,27 +101,26 @@ const PROJECTS = [
         repoLink: "https://github.com/PavanTalluri45/Next.js_Portfolio",
         image: "/project_images/casestudy4.webp"
     },
+
     {
-        title: "Credit Card Financial Dashboard",
-        tagline: "Power BI Financial Analytics",
-        description: "A comprehensive financial analytics solution analyzing credit card transactions and customer behavior through interactive Power BI dashboards.",
-        problem: "Raw financial transaction data is difficult to interpret and identify trends in without visualization.",
-        solution: "Created interactive dashboards with drill-down capabilities to analyze spending patterns by demographics and card type.",
+        title: "Store Sales and Profit Analysis",
+        tagline: "Retail Data Analytics with Python",
+        description: "Data analysis project examining retail sales and profit trends using Python, Pandas, and Plotly to generate actionable business insights.",
+        problem: "Retail businesses struggle to identify profitable product categories and customer segments due to scattered sales data and lack of analytical insights.",
+        solution: "Performed exploratory data analysis and profitability evaluation to uncover revenue patterns, profit margins, and customer segment performance for better decision-making.",
         architecture: [
-            "Power BI Dashboarding",
-            "SQL Data Modeling",
-            "DAX Measures",
-            "Data Transformation Pipelines"
+            "Exploratory Data Analysis (EDA)",
+            "Interactive Data Visualization & Cleaning",
         ],
         features: [
-            "Transaction Trend Analysis",
-            "Customer Segmentation",
-            "Revenue Breakdown",
-            "Real-time Data Refresh"
+            "Revenue Trend Analysis",
+            "Category and Sub-Category Performance Insights",
+            "Sales-to-Profit Ratio Evaluation",
+            "Customer Segment Profitability Analysis"
         ],
-        stack: ["Power BI", "SQL", "Data Modeling", "Data Visualization"],
-        repoLink: "https://github.com/PavanTalluri45/CreditCard-Financial-Analysis-PowerBI",
-        image: "/project_images/casestudy5.webp"
+        stack: ["Python", "Pandas", "Plotly"],
+        repoLink: "https://github.com/PavanTalluri45/StoreSalesandProfitAnalysisusingPython",
+        image: "/project_images/casestudy10.webp"
     },
     {
         title: "Social Media Analytics",
@@ -131,9 +130,8 @@ const PROJECTS = [
         solution: "Automated data cleaning with Power Query and built KPIs to track engagement and sentiment.",
         architecture: [
             "Power BI",
-            "Power Query ETL",
-            "DAX for Logic",
-            "Social Media Data APIs"
+            "Power Query",
+
         ],
         features: [
             "Campaign Performance Tracking",
@@ -141,7 +139,7 @@ const PROJECTS = [
             "User Engagement Metrics",
             "Viral Trend Identification"
         ],
-        stack: ["Power BI", "Power Query", "DAX", "Data Visualization"],
+        stack: ["Power BI", "Power Query", "DAX", "Data Visualization", "Data Cleaning"],
         repoLink: "https://github.com/PavanTalluri45/RealTimeTwitterAnalyticsDashboard-PowerBI",
         image: "/project_images/casestudy6.webp"
     },
@@ -167,28 +165,6 @@ const PROJECTS = [
         repoLink: "https://github.com/PavanTalluri45/TelcoCustomerChurnAnalysis",
         image: "/project_images/casestudy7.webp"
     },
-    {
-        title: "Supplement Sales Forecasting",
-        tagline: "ML-Based Sales Prediction",
-        description: "Machine learning project analyzing sales data (2020–2025) and forecasting future revenue with up to 99.93% predictive accuracy.",
-        problem: "Inventory mismanagement leads to stockouts or overstocking, hurting profitability.",
-        solution: "Trained ensemble regression models to predict future sales demand with high precision.",
-        architecture: [
-            "Scikit-Learn Machine Learning",
-            "Regression Models",
-            "Time Series Analysis",
-            "Model Evaluation Pipelines"
-        ],
-        features: [
-            "Revenue Trend Analysis",
-            "Future Sales Prediction",
-            "Model Accuracy Validation",
-            "Platform Performance Review"
-        ],
-        stack: ["Python", "Pandas", "Scikit-Learn", "Machine Learning"],
-        repoLink: "https://github.com/PavanTalluri45/SupplementSalesAnalysis",
-        image: "/project_images/casestudy8.webp"
-    }
 ];
 
 // Helper Component for Tabs with Slide Effect

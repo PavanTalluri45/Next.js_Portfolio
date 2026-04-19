@@ -11,8 +11,8 @@ import { motion, AnimatePresence } from "motion/react";
 
 // Local components
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
-import { AuroraText } from "@/components/ui/aurora-text";
 import { Dock, DockIcon } from "@/components/ui/dock";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 
 // Utilities
 import { cn } from "@/lib/utils";
@@ -102,10 +102,11 @@ export default function Header() {
     };
 
     /**
-     * Handles logo click to return to home
+     * Handles logo click to scroll to home
      */
-    const handleLogoClick = () => {
-        window.location.href = "/";
+    const handleLogoClick = (e) => {
+        e.preventDefault();
+        handleLinkClick("#home");
     };
 
     /**
@@ -197,113 +198,71 @@ export default function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [updateActiveSection]);
 
-    // ==================== DESKTOP NAVIGATION ====================
+    // ==================== DESKTOP DOCK ====================
 
-    const headerVariants = {
-        initial: {
-            y: 0,
-            opacity: 1,
-            width: "100%",
-            borderRadius: "0px",
-            top: 0
-        },
-        animate: (isScrolled) => ({
-            y: 0,
-            opacity: 1,
-            width: isScrolled ? "auto" : "100%",
-            borderRadius: isScrolled ? "9999px" : "0px",
-            top: isScrolled ? "1.5rem" : "0rem",
-            transition: {
-                type: "spring",
-                stiffness: 260,
-                damping: 25
-            }
-        })
-    };
-
-    const renderDesktopNav = () => {
+    const renderDesktopDock = () => {
         if (windowWidth < 768) return null;
         if (isFooterVisible) return null;
 
         return (
-            <motion.header
-                className={cn(
-                    "fixed z-50 flex items-center justify-center transition-colors duration-500",
-                    isScrolled
-                        ? "left-1/2 -translate-x-1/2 bg-background/80 backdrop-blur-md border border-border/50 shadow-lg px-12 py-3"
-                        : "left-0 right-0 px-12 py-8 bg-transparent border-none"
-                )}
-                initial="initial"
-                animate="animate"
-                custom={isScrolled}
-                variants={headerVariants}
+            <motion.div
+                className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-full max-w-2xl px-4"
+                initial={{ y: 100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: "spring", stiffness: 260, damping: 25 }}
             >
-                <div
-                    className={cn(
-                        "flex items-center w-full",
-                        isScrolled ? "gap-6" : "justify-between"
-                    )}
+                <Dock
+                    className="bg-background/80 backdrop-blur-md border border-border/50 shadow-lg"
+                    iconSize={56}
+                    iconMagnification={70}
+                    iconDistance={140}
+                    disableMagnification={false}
                 >
-                    {/* Logo */}
-                    <motion.button
-                        onClick={handleLogoClick}
-                        className="text-2xl font-bold tracking-tight cursor-pointer"
-                        layout
-                    >
-                        {isScrolled ? (
-                            <span className="text-primary">P</span>
-                        ) : (
-                            <AuroraText>Pavan</AuroraText>
-                        )}
-                    </motion.button>
+                    {/* Navigation Items with Tooltip */}
+                    {NAV_ITEMS.map((item) => {
+                        const isActive = activeSection === item.href.substring(1);
+                        const Icon = item.icon;
 
-                    {/* Navigation Items */}
-                    <nav className="flex items-center gap-1">
-                        {NAV_ITEMS.map((item) => {
-                            const isActive = activeSection === item.href.substring(1);
-
-                            return (
-                                <Link
-                                    key={item.name}
-                                    href={item.href}
-                                    onClick={(e) => handleSmoothScroll(e, item.href)}
-                                    className={cn(
-                                        "relative flex items-center justify-center transition-all duration-300 rounded-full group px-5 py-2.5",
-                                        isActive
-                                            ? "text-primary font-semibold"
-                                            : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                                    )}
-                                >
-                                    <span className="text-sm font-medium">{item.name}</span>
-                                    {isActive && (
-                                        <motion.div
-                                            className="absolute inset-0 rounded-full bg-primary/10 -z-10"
-                                            layoutId="activeSection"
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 300,
-                                                damping: 30,
-                                            }}
-                                        />
-                                    )}
-                                </Link>
-                            );
-                        })}
-                    </nav>
+                        return (
+                            <DockIcon key={item.name}>
+                                <Tooltip>
+                                    <TooltipTrigger asChild>
+                                        <Link
+                                            href={item.href}
+                                            onClick={(e) => handleSmoothScroll(e, item.href)}
+                                            className={cn(
+                                                "flex items-center justify-center w-full h-full",
+                                                isActive
+                                                    ? "text-primary"
+                                                    : "text-muted-foreground hover:text-foreground"
+                                            )}
+                                        >
+                                            <Icon className="w-6 h-6" />
+                                        </Link>
+                                    </TooltipTrigger>
+                                    <TooltipContent sideOffset={8}>
+                                        {item.name}
+                                    </TooltipContent>
+                                </Tooltip>
+                            </DockIcon>
+                        );
+                    })}
 
                     {/* Theme Toggle */}
-                    <div className={cn("flex items-center", !isScrolled && "justify-end")}>
-                        <div
-                            className={cn(
-                                "transition-all duration-300",
-                                isScrolled && "pl-4 border-l border-border/50"
-                            )}
-                        >
-                            <AnimatedThemeToggler />
-                        </div>
-                    </div>
-                </div>
-            </motion.header>
+                    <DockIcon>
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <div className="flex items-center justify-center w-full h-full">
+                                    <AnimatedThemeToggler />
+                                </div>
+                            </TooltipTrigger>
+                            <TooltipContent sideOffset={8}>
+                                Theme
+                            </TooltipContent>
+                        </Tooltip>
+                    </DockIcon>
+                </Dock>
+            </motion.div>
         );
     };
 
@@ -317,53 +276,57 @@ export default function Header() {
     const renderMobileDock = () => {
         if (windowWidth >= 768) return null;
 
-
         return (
             <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden pb-4">
                 <div className="flex justify-center px-2">
-                    <div className="flex items-center gap-2 bg-background/95 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl px-4 py-3">
+                    <Dock
+                        className="bg-background/95 backdrop-blur-xl border border-border/50 shadow-xl"
+                        iconSize={40}
+                        iconMagnification={50}
+                        iconDistance={80}
+                        disableMagnification={true}
+                    >
                         {/* Visible navigation icons */}
                         {visibleNavItems.map((item) => {
                             const isActive = activeSection === item.href.substring(1);
                             const Icon = item.icon;
 
                             return (
-                                <button
-                                    key={item.name}
-                                    onClick={() => handleLinkClick(item.href)}
-                                    className={cn(
-                                        "relative flex items-center justify-center p-3 rounded-full transition-colors duration-200",
-                                        isActive
-                                            ? "bg-primary/20 text-primary"
-                                            : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
-                                    )}
-                                >
-                                    <Icon className="w-5 h-5" />
-                                    {isActive && (
-                                        <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full" />
-                                    )}
-                                </button>
+                                <DockIcon key={item.name}>
+                                    <button
+                                        onClick={() => handleLinkClick(item.href)}
+                                        className={cn(
+                                            "flex flex-col items-center justify-center gap-0.5 w-full h-full",
+                                            isActive
+                                                ? "text-primary"
+                                                : "text-muted-foreground hover:text-foreground"
+                                        )}
+                                    >
+                                        <Icon className="w-5 h-5" />
+                                        <span className="text-[9px] font-medium">{item.name}</span>
+                                    </button>
+                                </DockIcon>
                             );
                         })}
 
                         {/* More button */}
                         {visibleNavItems.length < NAV_ITEMS.length && (
-                            <button
-                                onClick={() => setIsMobileMenuOpen(true)}
-                                className={cn(
-                                    "relative flex items-center justify-center p-3 rounded-full transition-colors duration-200",
-                                    isActiveSectionInHidden || isMobileMenuOpen
-                                        ? "bg-primary/20 text-primary"
-                                        : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
-                                )}
-                            >
-                                <MoreVertical className="w-5 h-5" />
-                                {isActiveSectionInHidden && (
-                                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full" />
-                                )}
-                            </button>
+                            <DockIcon>
+                                <button
+                                    onClick={() => setIsMobileMenuOpen(true)}
+                                    className={cn(
+                                        "flex flex-col items-center justify-center gap-0.5 w-full h-full",
+                                        isActiveSectionInHidden || isMobileMenuOpen
+                                            ? "text-primary"
+                                            : "text-muted-foreground hover:text-foreground"
+                                    )}
+                                >
+                                    <MoreVertical className="w-5 h-5" />
+                                    <span className="text-[9px] font-medium">More</span>
+                                </button>
+                            </DockIcon>
                         )}
-                    </div>
+                    </Dock>
                 </div>
             </div>
         );
@@ -463,7 +426,7 @@ export default function Header() {
 
     return (
         <>
-            {renderDesktopNav()}
+            {renderDesktopDock()}
             {renderMobileDock()}
             {renderMobileMenuModal()}
         </>

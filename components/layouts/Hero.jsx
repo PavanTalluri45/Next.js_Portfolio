@@ -1,36 +1,22 @@
 "use client";
 
-// React imports
 import { useState, useEffect } from "react";
-
-// Third-party libraries
 import { motion } from "motion/react";
-
-// Local components
 import { LightRays } from "@/components/ui/light-rays";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-
-// Icons
 import { ArrowRight } from "lucide-react";
 
-// ==================== CONSTANTS ====================
 
-const RESUME_PATH = "https://drive.google.com/drive/folders/1tjaqhh2Jd4e7Qj42jZau9YzY8yTgHPHo?usp=drive_link";
+const RESUME_PATH = "https://drive.google.com/file/d/1BRn-zMACpuE8iQfE3z97ZeF2GgPNz_xC/view?usp=drive_link";
 
 const TYPING_ROLES = [
-    "Full Stack Developer",
-    "Data Analyst",
+    "Full Stack Developer"
 ];
 
-// ==================== COMPONENT ====================
 
-/**
- * Hero Section Component - Landing section with animated introduction
- * Features: Animated background, typing animation, and responsive CTA buttons
- */
 export default function Hero() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [typingKey, setTypingKey] = useState(0);
@@ -40,7 +26,7 @@ export default function Hero() {
         setTypingKey(prev => prev + 1);
     }, []);
 
-    // Animation variants for fade-up effect
+
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
         visible: (i) => ({
@@ -59,38 +45,33 @@ export default function Hero() {
             id="home"
             className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background px-4 py-4"
         >
-            {/* Background Effects */}
+
             <div className="absolute inset-0 z-0">
-                <LightRays
-                    count={12}
-                    color="rgba(120, 119, 198, 0.2)"
-                    blur={60}
-                    speed={15}
-                    length="70vh"
-                    className="opacity-70"
-                />
+                <div className="absolute inset-0 bg-background/95" />
+                <LightRays />
+                <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-background" />
             </div>
 
-            {/* Content */}
+
             <div className="relative z-10 mx-auto w-full max-w-4xl text-center px-3">
-                {/* Name */}
+
                 <motion.h1
                     custom={1}
                     initial="hidden"
                     animate={isLoaded ? "visible" : "hidden"}
                     variants={fadeUpVariants}
-                    className="mb-2 mt-10 text-2xl font-bold tracking-tight xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+                    className="mb-6 text-2xl font-bold tracking-tight xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
                 >
                     <AuroraText>Pavan Kumar Talluri</AuroraText>
                 </motion.h1>
 
-                {/* Typing Animation - Professional Roles */}
+
                 <motion.div
                     custom={2}
                     initial="hidden"
                     animate={isLoaded ? "visible" : "hidden"}
                     variants={fadeUpVariants}
-                    className="mb-4 h-auto min-h-12 sm:min-h-14 text-lg font-medium text-muted-foreground sm:text-xl md:text-2xl lg:text-3xl"
+                    className="mb-6 h-auto min-h-12 sm:min-h-14 text-lg font-medium text-muted-foreground sm:text-xl md:text-2xl lg:text-3xl"
                 >
                     <span className="block sm:inline">I am a </span>
                     <TypingAnimation
@@ -103,30 +84,30 @@ export default function Hero() {
                     />
                 </motion.div>
 
-                {/* Description */}
+
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={isLoaded ? { opacity: 1 } : {}}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="mx-auto w-full max-w-4xl text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg px-2 sm:px-4"
+                    className="mb-6 mx-auto w-full max-w-4xl text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg px-2 sm:px-4"
                 >
                     <p>
-                        A full-stack engineer with a strong analytical foundation who builds end-to-end digital systems and transforms data into strategic insight. I create reliable, scalable applications while simultaneously analyzing complex information to identify patterns, optimize performance, and guide informed business decisions, ensuring that every product is both technically sound and commercially intelligent.
+                        An enthusiastic Full-Stack Developer eager to contribute to real-world projects by building complete web applications — from clean, responsive interfaces to robust backend systems — with a strong passion for writing reliable code and continuously growing through hands-on experience.
                     </p>
                 </motion.div>
 
-                {/* Call-to-Action Buttons */}
+
                 <motion.div
                     custom={4}
                     initial="hidden"
                     animate={isLoaded ? "visible" : "hidden"}
                     variants={fadeUpVariants}
-                    className="mt-6 flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6"
+                    className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6"
                 >
-                    {/* View Projects Button */}
+
                     <RainbowButton
                         onClick={() => document.getElementById("engineering")?.scrollIntoView({ behavior: "smooth" })}
-                        className="h-10 sm:h-12 w-full sm:w-auto min-w-[240px] rounded-lg text-sm sm:text-base px-6"
+                        className="h-10 sm:h-12 w-full sm:w-auto min-w-60 rounded-lg text-sm sm:text-base px-6"
                     >
                         <span className="flex items-center justify-center sm:justify-start gap-2">
                             View My Work
@@ -134,7 +115,7 @@ export default function Hero() {
                         </span>
                     </RainbowButton>
 
-                    {/* Desktop Resume Button */}
+
                     <div className="hidden sm:block w-full sm:w-auto">
                         <a
                             href={RESUME_PATH}
@@ -143,14 +124,14 @@ export default function Hero() {
                             className="inline-block w-full"
                         >
                             <InteractiveHoverButton
-                                className="h-12 w-full min-w-[240px] rounded-lg text-base px-6"
+                                className="h-12 w-full min-w-60 rounded-lg text-base px-6"
                             >
                                 Download Resume
                             </InteractiveHoverButton>
                         </a>
                     </div>
 
-                    {/* Mobile Resume Button */}
+
                     <div className="block sm:hidden w-full">
                         <a
                             href={RESUME_PATH}

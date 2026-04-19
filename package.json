@@ -6,14 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "docker:dev": "docker-compose up dev",
-    "docker:prod": "docker-compose up prod",
-    "docker:build": "docker-compose build",
-    "docker:build:dev": "docker-compose build dev",
-    "docker:build:prod": "docker-compose build prod",
-    "docker:down": "docker-compose down",
-    "docker:clean": "docker-compose down -v --rmi all"
+    "lint": "eslint"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",

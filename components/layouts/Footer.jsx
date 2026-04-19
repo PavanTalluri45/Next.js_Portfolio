@@ -24,9 +24,7 @@ const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/pavankumartalluri45/", label: "LinkedIn" },
 ];
 
-/**
- * Footer Component - Website footer with brand intro, quick links, and contact info
- */
+
 export default function Footer() {
     const smoothScroll = (href) => {
         const element = document.querySelector(href);
@@ -35,7 +33,7 @@ export default function Footer() {
         }
     };
 
-    const resumePath = "https://drive.google.com/drive/folders/1tjaqhh2Jd4e7Qj42jZau9YzY8yTgHPHo?usp=drive_link";
+    const resumePath = "https://drive.google.com/file/d/1BRn-zMACpuE8iQfE3z97ZeF2GgPNz_xC/view?usp=drive_link";
 
     const handleDownloadResume = () => {
         window.open(resumePath, '_blank', 'noopener,noreferrer');
@@ -43,11 +41,11 @@ export default function Footer() {
 
     return (
         <footer id="footer" className="relative bg-background border-t border-border/50 py-16 overflow-hidden">
-            {/* Remove container constraint and use full width */}
+           
             <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-12">
 
-                    {/* Left Column: Brand & Social */}
+  
                     <motion.div
                         className="lg:col-span-5 space-y-6"
                         initial={{ opacity: 0, y: 20 }}
@@ -76,7 +74,7 @@ export default function Footer() {
                                                 aria-label={social.label}
                                                 className="block"
                                             >
-                                                {/* Icon Container - BorderBeam with faster animation */}
+                                             
                                                 <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-background/50 border border-border/10 group cursor-pointer hover:bg-primary/10 transition-colors duration-300">
                                                     <BorderBeam size={40} duration={3} delay={0} borderWidth={1} />
                                                     <social.icon className="relative z-10 w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
@@ -92,7 +90,7 @@ export default function Footer() {
                         </div>
                     </motion.div>
 
-                    {/* Middle Column: Quick Links */}
+
                     <motion.div
                         className="lg:col-span-3 lg:pl-8 space-y-6"
                         initial={{ opacity: 0, y: 20 }}
@@ -115,7 +113,7 @@ export default function Footer() {
                         </ul>
                     </motion.div>
 
-                    {/* Right Column: Contact & Resume */}
+
                     <motion.div
                         className="lg:col-span-4 space-y-8"
                         initial={{ opacity: 0, y: 20 }}
@@ -126,7 +124,7 @@ export default function Footer() {
                         <div className="space-y-6">
                             <h3 className="text-lg font-semibold text-foreground">Contact Info</h3>
 
-                            {/* Email Item */}
+
                             <div className="flex items-center gap-4">
                                 <div className="relative w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-background/50 border border-border/10 shrink-0 hover:bg-primary/10 transition-colors duration-300">
                                     <BorderBeam size={35} duration={3} delay={0} borderWidth={1} />
@@ -143,7 +141,7 @@ export default function Footer() {
                                 </div>
                             </div>
 
-                            {/* Phone Item */}
+
                             <div className="flex items-center gap-4">
                                 <div className="relative w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-background/50 border border-border/10 shrink-0 hover:bg-primary/10 transition-colors duration-300">
                                     <BorderBeam size={35} duration={3} delay={0} borderWidth={1} />
@@ -158,7 +156,7 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        {/* Resume Button */}
+
                         <div className="pt-2">
                             <div className="hidden md:block">
                                 <InteractiveHoverButton onClick={handleDownloadResume}>
@@ -177,7 +175,7 @@ export default function Footer() {
                     </motion.div>
                 </div>
 
-                {/* Footer Bottom - full width */}
+
                 <div className="border-t border-border/40 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
                     <p>© {new Date().getFullYear()} Pavan Kumar Talluri. All rights reserved.</p>
                     <p>Built with Next.js 16</p>

@@ -17,13 +17,6 @@ const JOURNEY = [
         color: "text-blue-400",
         items: [
             {
-                title: "Data Analyst Intern",
-                organization: "NullClass Edtech Private Limited",
-                period: "Nov 2024 - Apr 2025",
-                desc: "Built an interactive Power BI business intelligence dashboard to deliver real-time visibility into key performance indicators and emerging trends, supporting data-driven strategic decision-making. Executed large-scale data cleaning and transformation using Power Query, improving overall data quality by 40 percent and establishing reliable automated data pipelines. Designed advanced DAX measures and calculated columns to generate actionable insights from social media engagement data, enabling more precise, performance-driven content and marketing strategies.",
-                tags: ["Power BI", "Power Query", "DAX", "Data Visualization", "Data Cleaning"]
-            },
-            {
                 title: "Developer Intern",
                 organization: "I AIM Labs",
                 period: "Nov 2024 - Feb 2025",

@@ -1,10 +1,10 @@
-// Next.js imports
 import { Rubik } from "next/font/google";
 import "./globals.css";
 
 // Local components
 import { ThemeProvider } from "@/providers/theme-provider";
 import Header from "@/components/layouts/Header";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 // ==================== FONT CONFIGURATION ====================
 
@@ -17,7 +17,7 @@ const rubik = Rubik({
 
 export const metadata = {
   title: "Pavan Kumar | Portfolio",
-  description: "Full Stack Developer & Data Analyst - Building scalable web applications and transforming data into insights. Explore my projects in web development, data analytics, and machine learning.",
+  description: "Full Stack Developer - Building scalable web applications.",
 };
 
 // ==================== ROOT LAYOUT ====================
@@ -36,8 +36,10 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
+          <TooltipProvider>
+            <Header />
+            {children}
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

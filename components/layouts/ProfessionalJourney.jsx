@@ -22,15 +22,12 @@ const JOURNEY = [
                 period: "Nov 2024 - Feb 2025",
                 desc: "Developed responsive, cross-device user interfaces with React.js and Tailwind CSS to deliver a consistent and intuitive user experience, while improving performance and accessibility through optimized page loads, cleaner code architecture, and modern web accessibility standards. Collaborated closely with backend teams to integrate RESTful APIs and worked within Agile development workflows using Git for version control, code reviews, sprint planning, and iterative feature releases.",
                 tags: [
+                    "HTML/CSS",
+                    "JavaScript",
                     "React.js",
                     "Tailwind CSS",
-                    "Responsive Design",
-                    "Web Performance Optimization",
-                    "Web Accessibility",
                     "RESTful API Integration",
-                    "Git Version Control",
-                    "Code Reviews",
-                    "Cross-Browser Compatibility"
+                    "Git & GitHub",
                 ]
 
             }

@@ -27,7 +27,6 @@ const TECHNOLOGY_ICONS = [
     "mysql",
     "mongodb",
     "redis",
-    "firebase",
     "git",
     "github",
 ];
@@ -52,9 +51,9 @@ const SKILLS = [
 
 
     { name: "MySQL", category: "Database" },
-    { name: "MongoDB", category: "Database" },
+    { name: "MongoDB Atlas", category: "Database" },
     { name: "Redis", category: "Database" },
-    { name: "Firebase", category: "Database" },
+   
 
 
     { name: "Git", category: "Tools" },

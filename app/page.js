@@ -1,9 +1,6 @@
 "use client";
 
-// React imports
 import { useState, useEffect } from "react";
-
-// Local components - Layout sections
 import Hero from "@/components/layouts/Hero";
 import About from "@/components/layouts/About";
 import EngineeringWork from "@/components/layouts/EngineeringWork";

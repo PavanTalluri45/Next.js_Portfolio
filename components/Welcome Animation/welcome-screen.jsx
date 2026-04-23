@@ -40,7 +40,7 @@ export default function WelcomeScreen({ onComplete }) {
                         className="text-2xl font-bold sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-center px-4 flex flex-col sm:flex-row items-center gap-2 sm:gap-4"
                     >
                         <TypingAnimation
-                            words={["Welcome to the World of Pavan Kumar"]}
+                            words={["Welcome to the World of Pavan"]}
                             duration={50}
                             className="font-bold text-transparent bg-clip-text bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500"
                             cursorStyle="|"

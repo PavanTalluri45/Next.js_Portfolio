@@ -293,18 +293,24 @@ export default function Header() {
 
                             return (
                                 <DockIcon key={item.name}>
-                                    <button
-                                        onClick={() => handleLinkClick(item.href)}
-                                        className={cn(
-                                            "flex flex-col items-center justify-center gap-0.5 w-full h-full",
-                                            isActive
-                                                ? "text-primary"
-                                                : "text-muted-foreground hover:text-foreground"
-                                        )}
-                                    >
-                                        <Icon className="w-5 h-5" />
-                                        <span className="text-[9px] font-medium">{item.name}</span>
-                                    </button>
+                                    <Tooltip>
+                                        <TooltipTrigger asChild>
+                                            <button
+                                                onClick={() => handleLinkClick(item.href)}
+                                                className={cn(
+                                                    "flex items-center justify-center w-full h-full",
+                                                    isActive
+                                                        ? "text-primary"
+                                                        : "text-muted-foreground hover:text-foreground"
+                                                )}
+                                            >
+                                                <Icon className="w-5 h-5" />
+                                            </button>
+                                        </TooltipTrigger>
+                                        <TooltipContent sideOffset={8}>
+                                            {item.name}
+                                        </TooltipContent>
+                                    </Tooltip>
                                 </DockIcon>
                             );
                         })}
@@ -312,18 +318,24 @@ export default function Header() {
                         {/* More button */}
                         {visibleNavItems.length < NAV_ITEMS.length && (
                             <DockIcon>
-                                <button
-                                    onClick={() => setIsMobileMenuOpen(true)}
-                                    className={cn(
-                                        "flex flex-col items-center justify-center gap-0.5 w-full h-full",
-                                        isActiveSectionInHidden || isMobileMenuOpen
-                                            ? "text-primary"
-                                            : "text-muted-foreground hover:text-foreground"
-                                    )}
-                                >
-                                    <MoreVertical className="w-5 h-5" />
-                                    <span className="text-[9px] font-medium">More</span>
-                                </button>
+                                <Tooltip>
+                                    <TooltipTrigger asChild>
+                                        <button
+                                            onClick={() => setIsMobileMenuOpen(true)}
+                                            className={cn(
+                                                "flex items-center justify-center w-full h-full",
+                                                isActiveSectionInHidden || isMobileMenuOpen
+                                                    ? "text-primary"
+                                                    : "text-muted-foreground hover:text-foreground"
+                                            )}
+                                        >
+                                            <MoreVertical className="w-5 h-5" />
+                                        </button>
+                                    </TooltipTrigger>
+                                    <TooltipContent sideOffset={8}>
+                                        More
+                                    </TooltipContent>
+                                </Tooltip>
                             </DockIcon>
                         )}
                     </Dock>

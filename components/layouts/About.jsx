@@ -16,17 +16,14 @@ const TECHNOLOGY_ICONS = [
     "python",
     "javascript",
     "typescript",
-    "mysql",
     "react",
     "nextdotjs",
     "tailwindcss",
-    "html5",
-    "css",
     "nodedotjs",
     "express",
-    "mysql",
+
     "mongodb",
-    "redis",
+
     "git",
     "github",
 ];
@@ -48,12 +45,14 @@ const SKILLS = [
     { name: "Express.js", category: "Backend" },
     { name: "REST APIs", category: "Backend" },
     { name: "WebSockets", category: "Backend" },
+    { name: "LLM APIs", category: "Backend" },
 
 
-    { name: "MySQL", category: "Database" },
+
+    { name: "Supabase Database (PostgreSQL)", category: "Database" },
     { name: "MongoDB Atlas", category: "Database" },
-    { name: "Redis", category: "Database" },
-   
+
+
 
 
     { name: "Git", category: "Tools" },
@@ -250,7 +249,7 @@ export default function About() {
 
                         <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-linear-to-br from-gray-900 to-black">
                             <Image
-                                src="/My_image/my_image.webp"
+                                src="/My_image/my_image.jpeg"
                                 alt="Pavan Kumar Talluri - Full Stack Developer"
                                 fill
                                 priority

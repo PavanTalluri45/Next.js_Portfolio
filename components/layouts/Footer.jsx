@@ -33,7 +33,7 @@ export default function Footer() {
         }
     };
 
-    const resumePath = "https://drive.google.com/file/d/12mnjSft-8UK8AXYrdg87o84huGyXZivh/view?usp=drive_link";
+    const resumePath = "https://drive.google.com/file/d/1UQawU8NMKQ_VnBJyAV-JPYGk2dThM_mO/view?usp=drive_link";
 
     const handleDownloadResume = () => {
         window.open(resumePath, '_blank', 'noopener,noreferrer');
@@ -41,11 +41,11 @@ export default function Footer() {
 
     return (
         <footer id="footer" className="relative bg-background border-t border-border/50 py-16 overflow-hidden">
-           
+
             <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-12">
 
-  
+
                     <motion.div
                         className="lg:col-span-5 space-y-6"
                         initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function Footer() {
                                                 aria-label={social.label}
                                                 className="block"
                                             >
-                                             
+
                                                 <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-background/50 border border-border/10 group cursor-pointer hover:bg-primary/10 transition-colors duration-300">
                                                     <BorderBeam size={40} duration={3} delay={0} borderWidth={1} />
                                                     <social.icon className="relative z-10 w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />

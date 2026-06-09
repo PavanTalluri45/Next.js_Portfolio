@@ -13,27 +13,42 @@ import { Github, Layers, Code2, Cpu } from "lucide-react";
 
 const PROJECTS = [
     {
-        title: "Complete Authentication System",
-        tagline: "Enterprise-Grade Security Platform",
-        description: "A production-ready authentication platform implementing secure user registration, login, OTP-based email verification, password recovery, JWT and refresh token workflows, and Redis-powered rate limiting.",
-        problem: "Modern web applications require robust, scalable, and secure authentication to prevent unauthorized access and data breaches. Building this from scratch is complex and error-prone.",
-        solution: "Designed a microservice-oriented architecture separating Auth and Email services, ensuring scalability. implemented rigorous security measures like rate limiting via Redis and secure token management.",
+        title: "FitGen – AI Powered Workout Plan Generator",
+        tagline: "Personalized AI Fitness Planning Platform",
+        description: "A full-stack AI-powered fitness platform that generates personalized workout plans based on user goals, fitness level, health conditions, and workout preferences using Google Gemini AI. The application provides secure user authentication, intelligent fitness assessments, and dynamic workout recommendations.",
+        problem: "Creating personalized workout plans requires fitness expertise and significant time. Generic fitness programs often fail to address individual goals, physical limitations, and experience levels, resulting in poor engagement and ineffective outcomes.",
+        solution: "Developed an AI-driven fitness planning platform that collects user fitness data through a structured assessment process and leverages Google Gemini AI to generate customized workout plans. Implemented secure authentication, data protection, and validation mechanisms to ensure a reliable and scalable user experience.",
         architecture: [
-            "Microservices Architecture (Auth Service + Email Service)",
-            "Redis for Rate Limiting, Session Handling and OTP Storage & Expiration",
-            "MySQL Relational Database",
-            "Secure HTTP-only Cookies for Tokens"
+            "Next.js Full-Stack Architecture",
+            "Supabase PostgreSQL Database",
+            "Supabase Authentication & Authorization",
+            "Google Gemini AI Integration for Workout Generation",
+            "Row-Level Security (RLS) for User Data Protection",
+            "Backend Rate Limiting & Business Rule Validation"
         ],
         features: [
+            "AI-Powered Personalized Workout Plan Generation",
+            "Multi-Step Fitness Assessment Questionnaire",
             "Secure User Registration & Login",
-            "OTP-based Email Verification",
-            "Password Recovery Flow",
-            "JWT Access & Refresh Token Rotation",
-            "High Performance Rate Limiting"
+            "Email Verification & Session Management",
+            "Protected Routes & Authorization",
+            "Workout Plan History & User Data Management",
+            "Rate Limiting to Prevent Abuse and Reduce AI Costs",
+            "Responsive Mobile-First User Interface"
         ],
-        stack: ["Next.js", "TypeScript", "Node.js", "Express.js", "MySQL", "Redis", "JWT"],
-        repoLink: "https://github.com/PavanTalluri45/complete-authentication-system",
-        image: "/project_images/casestudy1.webp"
+        stack: [
+            "Next.js",
+            "React",
+            "JavaScript",
+            "Supabase Database (PostgreSQL)",
+            "Supabase Auth",
+            "Google Gemini AI (LLM API)",
+            "Tailwind CSS",
+            "React Hook Form",
+            "Zod"
+        ],
+        repoLink: "https://github.com/PavanTalluri45/fitgen_next.js",
+        image: "/project_images/casestudy1.png"
     },
     {
         title: "Guest Identity Verification System",

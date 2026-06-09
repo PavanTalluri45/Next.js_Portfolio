@@ -10,7 +10,7 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { ArrowRight } from "lucide-react";
 
 
-const RESUME_PATH = "https://drive.google.com/file/d/12mnjSft-8UK8AXYrdg87o84huGyXZivh/view?usp=drive_link";
+const RESUME_PATH = "https://drive.google.com/file/d/1UQawU8NMKQ_VnBJyAV-JPYGk2dThM_mO/view?usp=drive_link";
 
 const TYPING_ROLES = [
     "Full Stack Developer"

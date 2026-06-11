@@ -249,7 +249,7 @@ export default function About() {
 
                         <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-linear-to-br from-gray-900 to-black">
                             <Image
-                                src="/My_image/my_image.jpeg"
+                                src="/My_image/image.jpeg"
                                 alt="Pavan Kumar Talluri - Full Stack Developer"
                                 fill
                                 priority
@@ -268,7 +268,7 @@ export default function About() {
                 <div className="block md:hidden w-full h-full">
                     <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-linear-to-br from-gray-900 to-black">
                         <Image
-                            src="/My_image/my_image.webp"
+                            src="/My_image/image.jpeg"
                             alt="Pavan Kumar Talluri - Full Stack Developer"
                             fill
                             priority

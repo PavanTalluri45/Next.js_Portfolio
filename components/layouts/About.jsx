@@ -21,15 +21,14 @@ const SKILLS = [
     { name: "React.js", category: "Frontend" },
     { name: "Next.js", category: "Frontend" },
     { name: "Tailwind CSS", category: "Frontend" },
-    { name: "React Hook Form", category: "Frontend" },
-    { name: "Zod", category: "Frontend" },
+
 
     // Backend
     { name: "Node.js", category: "Backend" },
     { name: "Express.js", category: "Backend" },
     { name: "Python (FastAPI)", category: "Backend" },
     { name: "REST API", category: "Backend" },
-    { name: "WebSockets", category: "Backend" },
+
 
     // AI Engineering
     { name: "RAG Pipelines", category: "AI Engineering" },

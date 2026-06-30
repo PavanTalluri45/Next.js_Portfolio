@@ -10,10 +10,11 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { ArrowRight } from "lucide-react";
 
 
-const RESUME_PATH = "https://drive.google.com/file/d/1UQawU8NMKQ_VnBJyAV-JPYGk2dThM_mO/view?usp=drive_link";
+const RESUME_PATH = "https://drive.google.com/file/d/12ouhwBllPQ7fu4hc2rJkOS3ZHeKnna-D/view?usp=drive_link";
 
 const TYPING_ROLES = [
-    "Full Stack Developer"
+    "Full Stack Developer",
+    "Generative AI Engineer",
 ];
 
 
@@ -73,7 +74,7 @@ export default function Hero() {
                     variants={fadeUpVariants}
                     className="mb-6 h-auto min-h-12 sm:min-h-14 text-lg font-medium text-muted-foreground sm:text-xl md:text-2xl lg:text-3xl"
                 >
-                    <span className="block sm:inline">I am a </span>
+                    <span className="block sm:inline">I am an aspiring </span>
                     <TypingAnimation
                         key={typingKey}
                         words={TYPING_ROLES}
@@ -92,7 +93,7 @@ export default function Hero() {
                     className="mb-6 mx-auto w-full max-w-4xl text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg px-2 sm:px-4"
                 >
                     <p>
-                        An enthusiastic Full-Stack Developer eager to contribute to real-world projects by building complete web applications — from clean, responsive interfaces to robust backend systems — with a strong passion for writing reliable code and continuously growing through hands-on experience.
+                        An enthusiastic fresher and software engineering graduate with a background in Data Science. I focus on learning by doing—constantly coding, experimenting with new libraries, and gaining deep hands-on practice building clean web applications and exploring AI concepts.
                     </p>
                 </motion.div>
 

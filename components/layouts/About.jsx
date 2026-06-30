@@ -4,59 +4,50 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { Lens } from "@/components/ui/lens";
-import { IconCloud } from "@/components/ui/icon-cloud";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 
 
-const TECHNOLOGY_ICONS = [
-
-    "python",
-    "javascript",
-    "typescript",
-    "react",
-    "nextdotjs",
-    "tailwindcss",
-    "nodedotjs",
-    "express",
-
-    "mongodb",
-
-    "git",
-    "github",
-];
-
 const SKILLS = [
-
+    // Languages
     { name: "Python", category: "Language" },
-    { name: "JavaScript", category: "Language" },
-    { name: "TypeScript", category: "Language" },
+    { name: "JavaScript (ES6+)", category: "Language" },
     { name: "SQL", category: "Language" },
+    { name: "HTML/CSS", category: "Language" },
 
+    // Frontend
     { name: "React.js", category: "Frontend" },
     { name: "Next.js", category: "Frontend" },
     { name: "Tailwind CSS", category: "Frontend" },
-    { name: "UI Component Libraries", category: "Frontend" },
-    { name: "Responsive UI", category: "Frontend" },
+    { name: "React Hook Form", category: "Frontend" },
+    { name: "Zod", category: "Frontend" },
 
+    // Backend
     { name: "Node.js", category: "Backend" },
     { name: "Express.js", category: "Backend" },
-    { name: "REST APIs", category: "Backend" },
+    { name: "Python (FastAPI)", category: "Backend" },
+    { name: "REST API", category: "Backend" },
     { name: "WebSockets", category: "Backend" },
-    { name: "LLM APIs", category: "Backend" },
 
+    // AI Engineering
+    { name: "RAG Pipelines", category: "AI Engineering" },
+    { name: "Prompt Engineering", category: "AI Engineering" },
+    { name: "LangChain", category: "AI Engineering" },
+    { name: "LLM APIs", category: "AI Engineering" },
+    { name: "Vector Databases (ChromaDB)", category: "AI Engineering" },
 
-
+    // Database
     { name: "Supabase Database (PostgreSQL)", category: "Database" },
-    { name: "MongoDB Atlas", category: "Database" },
+    { name: "MongoDB Atlas (Cloud Database)", category: "Database" },
+    { name: "Upstash Redis", category: "Database" },
 
-
-
-
+    // Tools & Deployment
     { name: "Git", category: "Tools" },
     { name: "GitHub", category: "Tools" },
+    { name: "Postman", category: "Tools" },
+    { name: "Vercel", category: "Tools" },
 ];
 
 
@@ -64,9 +55,6 @@ export default function About() {
     const [currentStep, setCurrentStep] = useState(1);
 
 
-    const iconImages = TECHNOLOGY_ICONS.map(
-        (slug) => `https://cdn.simpleicons.org/${slug}`
-    );
 
     const handleImageError = (e) => {
         e.target.onerror = null;
@@ -90,9 +78,9 @@ export default function About() {
                 className="text-2xl md:text-4xl font-bold tracking-tight"
             >
                 <AuroraText colors={["#FF0080", "#7928CA", "#0070F3", "#38bdf8"]} speed={1}>
-                    Engineering Intelligent Software
+                    Learning, Building,
                 </AuroraText>{" "}
-                for Real-World Impact
+                and Growing Every Day
             </motion.h3>
 
             <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed flex-1">
@@ -101,9 +89,7 @@ export default function About() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.9 }}
                 >
-                    I am an enthusiastic Full-Stack Developer passionate about building complete web
-                    applications from the ground up. I enjoy turning ideas into real, working products
-                    that are clean, functional, and built to perform well in production environments.
+                    I am an entry-level software developer holding a B.Tech in Data Science. Instead of just reading theory, I love turning ideas into working web features and discovering how frontend layouts connect cleanly with backend logic.
                 </motion.p>
 
                 <motion.p
@@ -111,10 +97,7 @@ export default function About() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 1.1 }}
                 >
-                    Through internships and personal projects, I have gained hands-on experience working
-                    across the full development lifecycle — crafting responsive user interfaces, building
-                    secure backend APIs, managing databases, and integrating third-party services to
-                    deliver seamless end-to-end experiences.
+                    Through a foundational frontend internship and diving deep into building personal projects, I have gained solid hands-on practice across the full layout cycle. I am comfortable converting UI ideas into clean React/Next.js and Tailwind layouts, setting up APIs with Node.js or FastAPI, and handling basic database management with Supabase (PostgreSQL) and MongoDB.
                 </motion.p>
 
                 <motion.p
@@ -122,10 +105,7 @@ export default function About() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 1.3 }}
                 >
-                    I take pride in writing clean, maintainable code and continuously improving my skills
-                    with every project I build. My goal is to grow as a developer by contributing to
-                    meaningful products, collaborating with great teams, and solving real problems through
-                    thoughtful engineering.
+                    Lately, I have been channeling my analytical background into learning AI development—practicing how to build Retrieval-Augmented Generation (RAG) concepts, prompt flows, and utilizing LLM APIs. I am highly motivated, love debugging problems, and am looking for my first professional opportunity to contribute, adapt, and learn from an amazing team.
                 </motion.p>
             </div>
 
@@ -204,9 +184,7 @@ export default function About() {
                 }}
                 className="flex-1 flex items-center justify-center min-h-[450px] w-full relative"
             >
-                <div className="w-full h-full max-w-[550px]">
-                    <IconCloud images={iconImages} />
-                </div>
+
             </motion.div>
 
 

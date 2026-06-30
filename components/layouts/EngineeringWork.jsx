@@ -13,6 +13,56 @@ import { Github, Layers, Code2, Cpu } from "lucide-react";
 
 const PROJECTS = [
     {
+        title: "Employee Handbook RAG Chatbot",
+        tagline: "AI-Powered Enterprise Knowledge Assistant",
+        description: "A full-stack AI-powered RAG chatbot that enables employees to ask natural language questions about company policies and receive accurate, context-aware answers using Retrieval-Augmented Generation (RAG), Google Gemini AI, and semantic search.",
+
+        problem: "Employees often spend significant time searching lengthy company handbooks for policies and procedures. Traditional keyword search struggles to understand natural language queries and frequently returns irrelevant information.",
+
+        solution: "Built a Retrieval-Augmented Generation (RAG) chatbot that processes company handbook documents, generates vector embeddings, performs semantic search using Chroma Cloud, and uses Google Gemini AI to generate accurate, context-aware responses. Implemented secure authentication, conversation history, caching, and scalable backend APIs for a production-ready experience.",
+
+        architecture: [
+            "Next.js Frontend",
+            "FastAPI Backend",
+            "LangChain RAG Pipeline",
+            "Google Gemini AI Integration",
+            "Gemini Embeddings",
+            "Chroma Cloud Vector Database",
+            "Supabase Authentication & Database",
+            "Upstash Redis Caching",
+            "REST API Architecture"
+        ],
+
+        features: [
+            "Retrieval-Augmented Generation (RAG)",
+            "Semantic Vector Search",
+            "Document Chunking & Embedding Pipeline",
+            "Conversation History",
+            "Secure User Authentication",
+            "Redis Caching for Faster Responses",
+            "Responsive Chat Interface",
+            "Error Handling & Retry Mechanisms"
+        ],
+
+        stack: [
+            "Next.js",
+            "React",
+            "JavaScript",
+            "Python",
+            "FastAPI",
+            "LangChain",
+            "Google Gemini AI (LLM)",
+            "Gemini Embeddings",
+            "Chroma Cloud (Vector Database)",
+            "Supabase (PostgreSQL Database & Authentication)",
+            "Upstash Redis (Caching)",
+            "Tailwind CSS"
+        ],
+
+        repoLink: "https://github.com/PavanTalluri45/RAG_Chatbot",
+        image: "/project_images/casestudy1.png"
+    },
+    {
         title: "FitGen – AI Powered Workout Plan Generator",
         tagline: "Personalized AI Fitness Planning Platform",
         description: "A full-stack AI-powered fitness platform that generates personalized workout plans based on user goals, fitness level, health conditions, and workout preferences using Google Gemini AI. The application provides secure user authentication, intelligent fitness assessments, and dynamic workout recommendations.",
@@ -48,7 +98,7 @@ const PROJECTS = [
             "Zod"
         ],
         repoLink: "https://github.com/PavanTalluri45/fitgen_next.js",
-        image: "/project_images/casestudy1.png"
+        image: "/project_images/casestudy5.png"
     },
     {
         title: "Guest Identity Verification System",

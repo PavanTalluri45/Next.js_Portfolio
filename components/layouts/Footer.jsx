@@ -33,7 +33,7 @@ export default function Footer() {
         }
     };
 
-    const resumePath = "https://drive.google.com/file/d/1UQawU8NMKQ_VnBJyAV-JPYGk2dThM_mO/view?usp=drive_link";
+    const resumePath = "https://drive.google.com/file/d/12ouhwBllPQ7fu4hc2rJkOS3ZHeKnna-D/view?usp=drive_link";
 
     const handleDownloadResume = () => {
         window.open(resumePath, '_blank', 'noopener,noreferrer');

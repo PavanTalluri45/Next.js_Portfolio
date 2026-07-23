@@ -1,4 +1,4 @@
-import { Rubik } from "next/font/google";
+import { Google_Sans_Flex } from "next/font/google";
 import "./globals.css";
 
 // Local components
@@ -8,16 +8,16 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 
 // ==================== FONT CONFIGURATION ====================
 
-const rubik = Rubik({
+const googleSansFlex = Google_Sans_Flex({
   subsets: ["latin"],
-  variable: "--font-rubik",
+  variable: "--font-sans",
+  display: "swap",
 });
 
 // ==================== METADATA ====================
 
 export const metadata = {
   title: "Pavan Kumar | Portfolio",
-  description: "Full Stack Developer - Building scalable web applications.",
 };
 
 // ==================== ROOT LAYOUT ====================
@@ -29,7 +29,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${rubik.variable} font-sans antialiased`}>
+      <body className={`${googleSansFlex.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

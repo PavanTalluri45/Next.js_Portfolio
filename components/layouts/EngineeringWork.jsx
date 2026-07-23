@@ -11,7 +11,7 @@ import { Github, Layers, Code2, Cpu, Check } from "lucide-react";
 
 const PROJECTS = [
   {
-    title: "Insight Flow – AI SQL Data Assistant",
+    title: "Insight Flow – AI-powered Business Intelligence platform",
     tagline: "AI-Powered Natural Language Business Intelligence Platform",
 
     description:
@@ -73,7 +73,7 @@ const PROJECTS = [
   },
   {
     title: "Employee Handbook RAG Chatbot",
-    tagline: "AI-Powered Enterprise Knowledge Assistant",
+    tagline: "AI-Powered Knowledge Assistant",
     description:
       "A full-stack AI-powered RAG chatbot that enables employees to ask natural language questions about company policies and receive accurate, context-aware answers using Retrieval-Augmented Generation (RAG), Google Gemini AI, and semantic search.",
 

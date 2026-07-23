@@ -83,10 +83,11 @@ export default function Hero() {
           className="mb-6 mx-auto w-full max-w-4xl text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg px-2 sm:px-4"
         >
           <p>
-            An enthusiastic fresher and software engineering graduate with a
-            background in Data Science. I focus on learning by doing—constantly
-            coding, experimenting with new libraries, and gaining deep hands-on
-            practice building clean web applications and exploring AI concepts.
+            I'm a B.Tech in Data Science graduate passionate about Full Stack AI
+            Development. I enjoy developing intelligent web applications,
+            exploring modern AI technologies, and continuously improving my
+            skills to create meaningful software that delivers real value to
+            users.
           </p>
         </motion.div>
 

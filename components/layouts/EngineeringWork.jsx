@@ -69,7 +69,7 @@ const PROJECTS = [
     ],
 
     repoLink:
-      "https://github.com/PavanTalluri45/InsightFlow_AIPoweredSQLDataAssistant",
+      "https://github.com/PavanTalluri45/InsightFlow_AIPoweredBusinessIntelligencePlatform",
   },
   {
     title: "Employee Handbook RAG Chatbot",

@@ -282,7 +282,7 @@ function ProjectTabs({ project }) {
       </div>
 
       {/* Tab Content */}
-      <div className="min-h-[150px] border-t border-white/10 pt-6 mt-0 relative">
+      <div className="min-h-[150px] border-t border-foreground/10 pt-6 mt-0 relative">
         <AnimatePresence mode="wait">
           {activeTab === "features" && (
             <motion.ul
@@ -370,7 +370,7 @@ export default function EngineeringWork() {
         </p>
       </motion.div>
 
-      <div className="space-y-8 max-w-5xl mx-auto">
+      <div className="space-y-8 max-w-6xl mx-auto">
         {PROJECTS.map((project, index) => (
           <motion.div
             key={index}
@@ -378,12 +378,12 @@ export default function EngineeringWork() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, delay: Math.min(index * 0.05, 0.2) }}
-            className="group relative rounded-2xl border border-white/10 bg-muted/20 hover:border-primary/25 transition-colors overflow-hidden p-6 md:p-10"
+            className="group relative rounded-2xl border border-foreground/10 bg-muted/20 hover:border-primary/25 transition-colors overflow-hidden p-6 md:p-10"
           >
             {/* Signature element: large faint case-file numeral, blueprint-style */}
             <span
               aria-hidden="true"
-              className="pointer-events-none select-none absolute -top-4 right-2 md:top-0 md:right-6 text-[110px] md:text-[150px]  font-black leading-none text-white/[0.035] z-0"
+              className="pointer-events-none select-none absolute -top-4 right-2 md:top-0 md:right-6 text-[110px] md:text-[150px]  font-black leading-none text-foreground/[0.035] z-0"
             >
               {String(index + 1).padStart(2, "0")}
             </span>
@@ -391,7 +391,9 @@ export default function EngineeringWork() {
             {/* Header */}
             <div className="relative z-10 mb-5">
               <div className="flex items-center gap-2 mb-2  text-xs uppercase tracking-widest">
-                <span className="text-primary/80">Case Study 0{index + 1}</span>
+                <span className="text-primary/80 whitespace-nowrap">
+                  Case Study 0{index + 1}
+                </span>
                 <span className="text-muted-foreground/30">/</span>
                 <span className="text-muted-foreground normal-case tracking-normal">
                   {project.tagline}
@@ -408,9 +410,9 @@ export default function EngineeringWork() {
             </p>
 
             {/* Problem / Approach */}
-            <div className="relative z-10 grid sm:grid-cols-2 gap-6 mb-8 pb-8 border-b border-white/10">
+            <div className="relative z-10 grid sm:grid-cols-2 gap-6 mb-8 pb-8 border-b border-foreground/10">
               <div>
-                <span className=" text-xs uppercase tracking-widest text-muted-foreground/60">
+                <span className=" text-xs uppercase font-semibold text-foreground">
                   The Problem
                 </span>
                 <p className="mt-2 text-sm text-foreground/80 leading-relaxed">
@@ -418,7 +420,7 @@ export default function EngineeringWork() {
                 </p>
               </div>
               <div>
-                <span className=" text-xs uppercase tracking-widest text-primary/70">
+                <span className=" text-xs uppercase font-semibold text-foreground">
                   The Approach
                 </span>
                 <p className="mt-2 text-sm text-foreground/80 leading-relaxed">

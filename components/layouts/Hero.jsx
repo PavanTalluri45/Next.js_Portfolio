@@ -10,9 +10,9 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { ArrowRight } from "lucide-react";
 
 const RESUME_PATH =
-  "https://drive.google.com/file/d/1j8jcq3ICr7m4S9wH0Bzbd1pIxjMVXqAQ/view?usp=drive_link";
+  "https://drive.google.com/file/d/1KUZDQNMiaVejq-wrNu1uuN0khqrPX1M5/view?usp=drive_link";
 
-const TYPING_ROLES = ["Full Stack AI Developer"];
+const TYPING_ROLES = ["Full Stack AI Engineer"];
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -84,7 +84,7 @@ export default function Hero() {
         >
           <p>
             I'm a B.Tech in Data Science graduate passionate about Full Stack AI
-            Development. I enjoy developing intelligent web applications,
+            Engineering. I enjoy developing intelligent web applications,
             exploring modern AI technologies, and continuously improving my
             skills to create meaningful software that delivers real value to
             users.

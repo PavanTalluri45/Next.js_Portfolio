@@ -28,21 +28,22 @@ const SKILLS = [
   { name: "REST API", category: "Backend" },
 
   // AI Engineering
-  { name: "RAG Pipelines", category: "AI Engineering" },
+  { name: "Retrieval-Augmented Generation (RAG) Pipelines", category: "AI Engineering" },
   { name: "Prompt Engineering", category: "AI Engineering" },
   { name: "LangChain", category: "AI Engineering" },
-  { name: "LLM APIs", category: "AI Engineering" },
+  { name: " LLMs (Gemini API)", category: "AI Engineering" },
   { name: "Vector Databases (ChromaDB)", category: "AI Engineering" },
 
   // Database
   { name: "Supabase Database (PostgreSQL)", category: "Database" },
-  { name: "MongoDB Atlas (Cloud Database)", category: "Database" },
+  { name: "MongoDB (NoSQL Database)", category: "Database" },
 
-  // Tools & Deployment
-  { name: "Git", category: "Tools" },
-  { name: "GitHub", category: "Tools" },
-  { name: "Postman", category: "Tools" },
-  { name: "Vercel", category: "Tools" },
+  // Tools & Cloud
+  { name: " Microsoft Azure (Basic cloud deployment)", category: "Tools & Cloud" },
+  { name: "Git", category: "Tools & Cloud" },
+  { name: "GitHub", category: "Tools & Cloud" },
+  { name: "Postman (API Testing)", category: "Tools & Cloud" },
+  { name: "Vercel (Automated CI/CD)", category: "Tools & Cloud" },
 ];
 
 export default function About() {
@@ -84,9 +85,9 @@ export default function About() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.9 }}
         >
-          I'm <strong>Pavan Kumar Talluri</strong>, a 2025 B.Tech graduate in
+          I&apos;m <strong>Pavan Kumar Talluri</strong>, a 2025 B.Tech graduate in 
           Data Science and an aspiring <strong>Full Stack AI Developer</strong>.
-          I'm looking for a fresher or entry-level opportunity where I can apply
+          I&apos;m looking for a fresher or entry-level opportunity where I can apply
           my skills, contribute to real-world projects, and continue growing as
           a full stack developer.
         </motion.p>
@@ -121,7 +122,7 @@ export default function About() {
           applications on Vercel. During my Frontend Developer internship at{" "}
           <strong>AIM Labs</strong>, I developed responsive user interfaces
           using React.js and Tailwind CSS, integrated REST APIs, and
-          strengthened my problem-solving skills. I'm passionate about learning
+          strengthened my problem-solving skills. I&apos;m passionate about learning
           new technologies, solving real-world problems, and continuously
           improving as a software developer.
         </motion.p>

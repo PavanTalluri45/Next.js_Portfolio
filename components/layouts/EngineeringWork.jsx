@@ -164,62 +164,6 @@ const PROJECTS = [
     repoLink: "https://github.com/PavanTalluri45/fitgen_next.js",
   },
   {
-    title: "Guest Identity Verification System",
-    tagline: "Real-time Event Management",
-    description:
-      "A full-stack event management and guest verification platform featuring secure guest registration, QR-based identity verification, real-time attendance tracking, and live analytics.",
-    problem:
-      "Managing large-scale events manually leads to long queues, verification errors, and lack of real-time data on guest attendance.",
-    solution:
-      "Built a QR-code based system allowing instant check-ins. Integrated WebSockets for a live dashboard that updates instantly as guests arrive.",
-    architecture: [
-      "Real-time WebSocket Communication",
-      "QR Code Generation & Scanning Logic",
-      "MongoDB Aggregations for Live Stats",
-      "Responsive Admin Dashboard",
-    ],
-    features: [
-      "Instant QR Check-in",
-      "Real-time Attendance Dashboard",
-      "Guest Analytics & Reporting",
-      "Secure Admin Protocols",
-    ],
-    stack: ["React", "Node.js", "Express.js", "MongoDB", "WebSockets", "jsQR"],
-    repoLink: "https://github.com/PavanTalluri45/Invitation_application",
-  },
-  {
-    title: "E-commerce Platform",
-    tagline: "Scalable MERN Stack Architecture",
-    description:
-      "A full-stack MERN e-commerce platform featuring responsive product browsing, cart management, and secure checkout, built on a microservice-based backend architecture.",
-    problem:
-      "Monolithic e-commerce apps become hard to scale and maintain as features grow.",
-    solution:
-      "Decoupled services into Orders, Cart, and Payments. This ensures that a failure in one service (e.g., Cart) doesn't bring down the entire product catalog.",
-    architecture: [
-      "Decoupled Microservices",
-      "RESTful API Gateway Pattern",
-      "Stripe Payment Integration",
-      "State Management with Redux Toolkit",
-    ],
-    features: [
-      "Product Catalog & Search",
-      "Cart & Wishlist Management",
-      "Secure Stripe Checkout",
-      "Order History & Tracking",
-    ],
-    stack: [
-      "React",
-      "Tailwind CSS",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Stripe",
-    ],
-    repoLink:
-      "https://github.com/PavanTalluri45/E-commerceapplication-MERNStack",
-  },
-  {
     title: "Next.js Portfolio",
     tagline: "High-Performance Digital Presence",
     description:

@@ -28,7 +28,10 @@ const SKILLS = [
   { name: "REST API", category: "Backend" },
 
   // AI Engineering
-  { name: "Retrieval-Augmented Generation (RAG) Pipelines", category: "AI Engineering" },
+  {
+    name: "Retrieval-Augmented Generation (RAG) Pipelines",
+    category: "AI Engineering",
+  },
   { name: "Prompt Engineering", category: "AI Engineering" },
   { name: "LangChain", category: "AI Engineering" },
   { name: " LLMs (Gemini API)", category: "AI Engineering" },
@@ -39,7 +42,10 @@ const SKILLS = [
   { name: "MongoDB (NoSQL Database)", category: "Database" },
 
   // Tools & Cloud
-  { name: " Microsoft Azure (Basic cloud deployment)", category: "Tools & Cloud" },
+  {
+    name: " Microsoft Azure (Basic cloud deployment)",
+    category: "Tools & Cloud",
+  },
   { name: "Git", category: "Tools & Cloud" },
   { name: "GitHub", category: "Tools & Cloud" },
   { name: "Postman (API Testing)", category: "Tools & Cloud" },
@@ -85,11 +91,12 @@ export default function About() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.9 }}
         >
-          I&apos;m <strong>Pavan Kumar Talluri</strong>, a 2025 B.Tech graduate in 
-          Data Science and an aspiring <strong>Full Stack AI Developer</strong>.
-          I&apos;m looking for a fresher or entry-level opportunity where I can apply
-          my skills, contribute to real-world projects, and continue growing as
-          a full stack developer.
+          I&apos;m <strong>Pavan Kumar Talluri</strong>, a 2025 B.Tech graduate
+          in Data Science and an aspiring{" "}
+          <strong>Full Stack AI Developer</strong>. I&apos;m looking for a
+          fresher or entry-level opportunity where I can apply my skills,
+          contribute to real-world projects, and continue growing as a full
+          stack developer.
         </motion.p>
 
         <motion.p
@@ -122,9 +129,9 @@ export default function About() {
           applications on Vercel. During my Frontend Developer internship at{" "}
           <strong>AIM Labs</strong>, I developed responsive user interfaces
           using React.js and Tailwind CSS, integrated REST APIs, and
-          strengthened my problem-solving skills. I&apos;m passionate about learning
-          new technologies, solving real-world problems, and continuously
-          improving as a software developer.
+          strengthened my problem-solving skills. I&apos;m passionate about
+          learning new technologies, solving real-world problems, and
+          continuously improving as a software developer.
         </motion.p>
       </div>
 
@@ -239,7 +246,7 @@ export default function About() {
           <Lens zoomFactor={1.5} lensSize={200} className="w-full h-full">
             <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-linear-to-br from-gray-900 to-black">
               <Image
-                src="/My_image/image.jpeg"
+                src="/My_image/image.jpg"
                 alt="Pavan Kumar Talluri - Full Stack Developer"
                 fill
                 priority
@@ -257,7 +264,7 @@ export default function About() {
         <div className="block md:hidden w-full h-full">
           <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-linear-to-br from-gray-900 to-black">
             <Image
-              src="/My_image/image.jpeg"
+              src="/My_image/image.jpg"
               alt="Pavan Kumar Talluri - Full Stack Developer"
               fill
               priority

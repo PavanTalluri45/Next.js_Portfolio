@@ -11,6 +11,64 @@ import { Github, Layers, Code2, Cpu, Check } from "lucide-react";
 
 const PROJECTS = [
   {
+    title:
+      "Retirement Party Guest Management System",
+    tagline: "Real-Time, Role-Based Event Management Platform",
+
+    description:
+      "A full-stack event management platform with separate guest, staff, and admin portals that replaces spreadsheet-based RSVP tracking, identity verification, and attendance monitoring for large-scale retirement celebrations. A Node.js/Express microservices backend coordinates guest registration, staff check-in, and real-time admin reporting behind Firebase authentication and role-based access control.",
+
+    problem:
+      "Organizing a retirement event means coordinating guest RSVPs, staff verification, and live attendance tracking across multiple stakeholders. Without a dedicated system, organizers are left relying on spreadsheets and fragmented tools that can't scale, verify identities quickly, or give real-time visibility into who has actually arrived.",
+
+    solution:
+      "Designed a modular, service-based platform where each backend service owns a single responsibility — auth, registration, verification, and analytics — connected through an API Gateway that verifies Firebase tokens and enforces rate limiting. Guest check-in uses Redis caching with single-flight request coalescing to prevent cache-stampede issues when multiple staff verify guests at once, and a fire-and-forget WebSocket layer pushes live updates to the admin dashboard without blocking check-in.",
+
+    architecture: [
+      "Node.js/Express Microservices Backend",
+      "API Gateway Pattern (Firebase Token Verification, Rate Limiting)",
+      "Auth Service — Role Management (Admin/Staff)",
+      "Registration Service — Guest RSVP & Confirmation Codes",
+      "Verification Service — Redis Caching & Single-Flight Coalescing",
+      "Analytics Service — MongoDB Aggregation Pipeline",
+      "WebSocket Service — Socket.IO Real-Time Notifications",
+      "Next.js/TypeScript Multi-Portal Frontend (Guest, Staff, Admin)",
+      "MongoDB Database with Partial & Composite Indexes",
+      "Redux Toolkit for Auth State Management",
+    ],
+
+    features: [
+      "Guest RSVP with Family Members & Meal Preferences",
+      "Automatic Confirmation Code Generation",
+      "Fast Staff Check-In by Confirmation Code or Phone Lookup",
+      "Real-Time Admin Dashboard via Socket.IO",
+      "Role-Based Access Control (Admin/Staff)",
+      "Firebase Authentication with Secure Token Verification",
+      "Redis Caching with Single-Flight Request Coalescing",
+      "GitHub Actions CI/CD with Automated Docker Builds",
+    ],
+
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Redux Toolkit",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Redis",
+      "Socket.IO",
+      "Firebase Authentication",
+      "Tailwind CSS",
+      "Jest",
+      "Docker",
+      "GitHub Actions",
+    ],
+
+    repoLink:
+      "https://github.com/PavanTalluri45/retirement-party-guest-management",
+  },
+  {
     title: "Insight Flow – AI-powered Business Intelligence platform",
     tagline: "AI-Powered Natural Language Business Intelligence Platform",
 

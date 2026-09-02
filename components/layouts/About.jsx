@@ -13,6 +13,7 @@ const SKILLS = [
   // Languages
   { name: "Python", category: "Language" },
   { name: "JavaScript (ES6+)", category: "Language" },
+  { name: "TypeScript", category: "Language" },
   { name: "SQL", category: "Language" },
   { name: "HTML/CSS", category: "Language" },
 
@@ -26,30 +27,44 @@ const SKILLS = [
   { name: "Express.js", category: "Backend" },
   { name: "Python (FastAPI)", category: "Backend" },
   { name: "REST API", category: "Backend" },
+  { name: "WebSocket", category: "Backend" },
 
-  // AI Engineering
+  // GenAI & LLM Integration
   {
     name: "Retrieval-Augmented Generation (RAG) Pipelines",
-    category: "AI Engineering",
+    category: "GenAI & LLM Integration",
   },
-  { name: "Prompt Engineering", category: "AI Engineering" },
-  { name: "LangChain", category: "AI Engineering" },
-  { name: " LLMs (Gemini API)", category: "AI Engineering" },
-  { name: "Vector Databases (ChromaDB)", category: "AI Engineering" },
+  { name: "Prompt Engineering", category: "GenAI & LLM Integration" },
+  { name: "LangChain", category: "GenAI & LLM Integration" },
+  { name: " LLMs (Gemini API)", category: "GenAI & LLM Integration" },
+  { name: "Vector Databases (ChromaDB)", category: "GenAI & LLM Integration" },
 
   // Database
-  { name: "Supabase Database (PostgreSQL)", category: "Database" },
-  { name: "MongoDB (NoSQL Database)", category: "Database" },
+  { name: "PostgreSQL", category: "Database" },
+  { name: "MongoDB", category: "Database" },
+  { name: "Redis", category: "Database" },
+  { name: "Firebase", category: "Database" },
 
   // Tools & Cloud
   {
-    name: " Microsoft Azure (Basic cloud deployment)",
+    name: "AWS (EC2, S3)",
     category: "Tools & Cloud",
   },
+  {
+    name: "CI/CD",
+    category: "Tools & Cloud",
+  },
+  {
+    name: "Docker (Containerization & Images)",
+    category: "Tools & Cloud",
+  },
+
   { name: "Git", category: "Tools & Cloud" },
   { name: "GitHub", category: "Tools & Cloud" },
-  { name: "Postman (API Testing)", category: "Tools & Cloud" },
-  { name: "Vercel (Automated CI/CD)", category: "Tools & Cloud" },
+  { name: "Postman", category: "Tools & Cloud" },
+  { name: "Vercel", category: "Tools & Cloud" },
+  { name: "Calude Code", category: "Tools & Cloud" },
+   { name: "Jest", category: "Tools & Cloud" },
 ];
 
 export default function About() {

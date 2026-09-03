@@ -64,7 +64,7 @@ const SKILLS = [
   { name: "Postman", category: "Tools & Cloud" },
   { name: "Vercel", category: "Tools & Cloud" },
   { name: "Calude Code", category: "Tools & Cloud" },
-   { name: "Jest", category: "Tools & Cloud" },
+  { name: "Jest", category: "Tools & Cloud" },
 ];
 
 export default function About() {
@@ -108,7 +108,7 @@ export default function About() {
         >
           I&apos;m <strong>Pavan Kumar Talluri</strong>, a 2025 B.Tech graduate
           in Data Science and an aspiring{" "}
-          <strong>Full Stack AI Developer</strong>. I&apos;m looking for a
+          <strong>Full Stack Developer</strong>. I&apos;m looking for a
           fresher or entry-level opportunity where I can apply my skills,
           contribute to real-world projects, and continue growing as a full
           stack developer.
@@ -137,16 +137,15 @@ export default function About() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 1.3 }}
         >
-          Through projects such as an AI-powered Business Intelligence platform,
-          an Employee Handbook RAG Chatbot, and an AI Workout Plan Generator, I
-          have gained practical experience in designing databases, developing
-          backend APIs, integrating AI models, and deploying full-stack
-          applications on Vercel. During my Frontend Developer internship at{" "}
-          <strong>AIM Labs</strong>, I developed responsive user interfaces
-          using React.js and Tailwind CSS, integrated REST APIs, and
-          strengthened my problem-solving skills. I&apos;m passionate about
-          learning new technologies, solving real-world problems, and
-          continuously improving as a software developer.
+          Through projects such as an AI SQL Assisant with Langchain, an
+          Employee Handbook RAG Chatbot, I have gained practical experience in
+          designing databases, developing backend APIs, integrating AI models,
+          and deploying full-stack applications on Vercel. During my Frontend
+          Developer internship at <strong>I AIM Labs</strong>, I developed
+          responsive user interfaces using React.js and Tailwind CSS, integrated
+          REST APIs, and strengthened my problem-solving skills. I&apos;m
+          passionate about learning new technologies, solving real-world
+          problems, and continuously improving as a software developer.
         </motion.p>
       </div>
 

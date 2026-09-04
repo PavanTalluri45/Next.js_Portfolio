@@ -109,10 +109,10 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.9 }}
         >
           I&apos;m <strong>Pavan Kumar Talluri</strong>, a 2025 B.Tech graduate
-          in Data Science and an aspiring <strong>Full Stack Developer</strong>.
+          in Data Science and an aspiring <strong>Full Stack GenAI Engineer</strong>.
           I&apos;m looking for a fresher or entry-level opportunity where I can
           apply my skills, contribute to real-world projects, and continue
-          growing as a full stack developer.
+          growing as a Full Stack GenAI Engineer.
         </motion.p>
 
         <motion.p
@@ -120,7 +120,7 @@ export default function About() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 1.1 }}
         >
-          I enjoy developing AI-powered web applications from idea to
+          I enjoy developing AI-powered web  applications from idea to
           deployment, working across both frontend and backend using{" "}
           <strong>Python</strong>,<strong> JavaScript</strong>,{" "}
           <strong>React.js</strong>,<strong> Next.js</strong>,{" "}
@@ -128,9 +128,9 @@ export default function About() {
           <strong>FastAPI</strong>, and
           <strong> Supabase</strong>. I have hands-on experience with AI
           technologies including <strong>LangChain</strong>,{" "}
-          <strong>Google Gemini</strong>,
+          <strong>LLMs (Google Gemini API)</strong>,
           <strong> Retrieval-Augmented Generation (RAG)</strong>, vector
-          databases, and REST API integration.
+          databases, REST API integration and MCP.
         </motion.p>
 
         <motion.p

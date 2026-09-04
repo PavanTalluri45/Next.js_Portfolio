@@ -84,7 +84,7 @@ export default function Hero() {
         >
           <p>
             I'm a B.Tech in Data Science graduate passionate about Full Stack
-            Developer with AI. I enjoy developing intelligent web applications,
+            GenAI Engineer. I enjoy developing intelligent web applications,
             exploring modern AI technologies, and continuously improving my
             skills to create meaningful software that delivers real value to
             users.

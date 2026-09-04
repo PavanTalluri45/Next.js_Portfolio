@@ -27,17 +27,19 @@ const SKILLS = [
   { name: "Express.js", category: "Backend" },
   { name: "Python (FastAPI)", category: "Backend" },
   { name: "REST API", category: "Backend" },
-  { name: "WebSocket", category: "Backend" },
+  { name: "WebSockets", category: "Backend" },
 
   // GenAI & LLM Integration
   {
-    name: "Retrieval-Augmented Generation (RAG) Pipelines",
+    name: "Retrieval-Augmented Generation (RAG) Pipeline",
     category: "GenAI & LLM Integration",
   },
   { name: "Prompt Engineering", category: "GenAI & LLM Integration" },
   { name: "LangChain", category: "GenAI & LLM Integration" },
   { name: " LLMs (Gemini API)", category: "GenAI & LLM Integration" },
   { name: "Vector Databases (ChromaDB)", category: "GenAI & LLM Integration" },
+  { name: "Model Context Protocol (MCP)", category: "GenAI & LLM Integration" },
+  { name: "AI Agents", category: "GenAI & LLM Integration" },
 
   // Database
   { name: "PostgreSQL", category: "Database" },
@@ -107,11 +109,10 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.9 }}
         >
           I&apos;m <strong>Pavan Kumar Talluri</strong>, a 2025 B.Tech graduate
-          in Data Science and an aspiring{" "}
-          <strong>Full Stack Developer</strong>. I&apos;m looking for a
-          fresher or entry-level opportunity where I can apply my skills,
-          contribute to real-world projects, and continue growing as a full
-          stack developer.
+          in Data Science and an aspiring <strong>Full Stack Developer</strong>.
+          I&apos;m looking for a fresher or entry-level opportunity where I can
+          apply my skills, contribute to real-world projects, and continue
+          growing as a full stack developer.
         </motion.p>
 
         <motion.p

@@ -10,9 +10,9 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { ArrowRight } from "lucide-react";
 
 const RESUME_PATH =
-  "https://drive.google.com/file/d/1gf4kRbaXMOpvePRDlaoLbM-1YuuDT0ib/view?usp=drive_link";
+  "https://drive.google.com/file/d/12sLzGWimQM6DLPf8InUx8f3ZzMAq3fjh/view?usp=drive_link";
 
-const TYPING_ROLES = ["Full Stack Developer"];
+const TYPING_ROLES = ["Full Stack GenAI Engineer"];
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);

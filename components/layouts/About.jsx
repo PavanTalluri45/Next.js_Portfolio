@@ -38,14 +38,12 @@ const SKILLS = [
   { name: "LangChain", category: "GenAI & LLM Integration" },
   { name: " LLMs (Gemini API)", category: "GenAI & LLM Integration" },
   { name: "Vector Databases (ChromaDB)", category: "GenAI & LLM Integration" },
-  { name: "Model Context Protocol (MCP)", category: "GenAI & LLM Integration" },
-  { name: "AI Agents", category: "GenAI & LLM Integration" },
 
   // Database
   { name: "PostgreSQL", category: "Database" },
   { name: "MongoDB", category: "Database" },
   { name: "Redis", category: "Database" },
-  { name: "Firebase", category: "Database" },
+
 
   // Tools & Cloud
   {
@@ -63,7 +61,7 @@ const SKILLS = [
 
   { name: "Git", category: "Tools & Cloud" },
   { name: "GitHub", category: "Tools & Cloud" },
-  { name: "Postman", category: "Tools & Cloud" },
+
   { name: "Vercel", category: "Tools & Cloud" },
   { name: "Calude Code", category: "Tools & Cloud" },
   { name: "Jest", category: "Tools & Cloud" },
@@ -109,10 +107,10 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.9 }}
         >
           I&apos;m <strong>Pavan Kumar Talluri</strong>, a 2025 B.Tech graduate
-          in Data Science and an aspiring <strong>Full Stack GenAI Engineer</strong>.
+          in Data Science and an aspiring <strong>Full Stack Engineer</strong>.
           I&apos;m looking for a fresher or entry-level opportunity where I can
           apply my skills, contribute to real-world projects, and continue
-          growing as a Full Stack GenAI Engineer.
+          growing as a Full Stack Engineer.
         </motion.p>
 
         <motion.p

@@ -62,14 +62,14 @@ const PROJECTS = [
       "Tailwind CSS",
       "Jest",
       "Docker",
-      "GitHub Actions",
+      "GitHub Actions (CI/CD)",
     ],
 
     repoLink:
       "https://github.com/PavanTalluri45/retirement-party-guest-management",
   },
   {
-    title: "Insight Flow – AI-powered Business Intelligence platform",
+    title: "AI SQL Assistant",
     tagline: "AI-Powered Natural Language Business Intelligence Platform",
 
     description:
@@ -127,10 +127,10 @@ const PROJECTS = [
     ],
 
     repoLink:
-      "https://github.com/PavanTalluri45/InsightFlow_AIPoweredBusinessIntelligencePlatform",
+      "https://github.com/PavanTalluri45/Ai_SQL_Assistant",
   },
   {
-    title: "Employee Handbook RAG Chatbot",
+    title: "Employee Handbook RAG Pipeline",
     tagline: "AI-Powered Knowledge Assistant",
     description:
       "A full-stack AI-powered RAG chatbot that enables employees to ask natural language questions about company policies and receive accurate, context-aware answers using Retrieval-Augmented Generation (RAG), Google Gemini AI, and semantic search.",
@@ -179,7 +179,7 @@ const PROJECTS = [
       "Tailwind CSS",
     ],
 
-    repoLink: "https://github.com/PavanTalluri45/RAG_Chatbot",
+    repoLink: "https://github.com/PavanTalluri45/RAG_Pipeline",
   },
   {
     title: "FitGen – AI Powered Workout Plan Generator",

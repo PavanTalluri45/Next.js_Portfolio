@@ -10,7 +10,7 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { ArrowRight } from "lucide-react";
 
 const RESUME_PATH =
-  "https://drive.google.com/file/d/1ewFdY7ef4fj-77qg9kD0PrW5-ANvYSXa/view?usp=drive_link";
+  "https://drive.google.com/file/d/1zkWTLRz9JzAk41kkUo62lrkOEx_LLLsf/view?usp=drive_link";
 
 const TYPING_ROLES = ["Full Stack Engineer"];
 
@@ -84,10 +84,9 @@ export default function Hero() {
         >
           <p>
             I'm a B.Tech in Data Science graduate passionate about Full Stack
-            Engineer. I enjoy developing intelligent web applications,
-            exploring modern AI technologies, and continuously improving my
-            skills to create meaningful software that delivers real value to
-            users.
+            Engineer. I enjoy developing intelligent web applications, exploring
+            modern AI technologies, and continuously improving my skills to
+            create meaningful software that delivers real value to users.
           </p>
         </motion.div>
 

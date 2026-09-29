@@ -47,7 +47,7 @@ const SKILLS = [
 
   // Tools & Cloud
   {
-    name: "AWS (EC2, S3)",
+    name: "Microsoft Azure",
     category: "Tools & Cloud",
   },
   {
@@ -55,7 +55,7 @@ const SKILLS = [
     category: "Tools & Cloud",
   },
   {
-    name: "Docker (Containerization & Images)",
+    name: "Docker",
     category: "Tools & Cloud",
   },
 
@@ -107,10 +107,10 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.9 }}
         >
           I&apos;m <strong>Pavan Kumar Talluri</strong>, a 2025 B.Tech graduate
-          in Data Science and an aspiring <strong>Full Stack Engineer</strong>.
+          in Data Science and an aspiring <strong>Full Stack Developer</strong>.
           I&apos;m looking for a fresher or entry-level opportunity where I can
           apply my skills, contribute to real-world projects, and continue
-          growing as a Full Stack Engineer.
+          growing as a Full Stack Developer.
         </motion.p>
 
         <motion.p
@@ -144,7 +144,7 @@ export default function About() {
           responsive user interfaces using React.js and Tailwind CSS, integrated
           REST APIs, and strengthened my problem-solving skills. I&apos;m
           passionate about learning new technologies, solving real-world
-          problems, and continuously improving as a software developer.
+          problems.
         </motion.p>
       </div>
 

@@ -41,7 +41,7 @@ export default function Footer() {
   };
 
   const resumePath =
-    "https://drive.google.com/file/d/1i20QG5e8-G-O191-JzLjh4tZQptfEKYc/view?usp=drive_link";
+    "https://drive.google.com/file/d/1Mdo3pCKHn-qszBXEPlRKWWjdVhBvUqEp/view?usp=drive_link";
 
   const handleDownloadResume = () => {
     window.open(resumePath, "_blank", "noopener,noreferrer");
